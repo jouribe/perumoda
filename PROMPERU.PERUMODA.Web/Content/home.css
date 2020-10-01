@@ -1,0 +1,454 @@
+.agenda.home header {
+    position: absolute;
+    width: 100%;
+    background: none;
+}
+.agenda.home header .content .top {
+    z-index: 99;
+}
+.cronogramas.home .content .bloques .bloque {
+    width: 25%;
+    margin-bottom: 20px;
+}
+.cronogramas.home .content {
+    padding: 130px 0;
+}
+section.banner .content {
+    position: relative;
+}
+section.banner .content .next {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-animation: shake-vertical 6s infinite both;
+            animation: shake-vertical 6s infinite both;
+}
+
+@-webkit-keyframes shake-vertical {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  80% {
+    -webkit-transform: translateY(6.4px);
+            transform: translateY(6.4px);
+  }
+  90% {
+    -webkit-transform: translateY(-6.4px);
+            transform: translateY(-6.4px);
+  }
+}
+@keyframes shake-vertical {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  80% {
+    -webkit-transform: translateY(6.4px);
+            transform: translateY(6.4px);
+  }
+  90% {
+    -webkit-transform: translateY(-6.4px);
+            transform: translateY(-6.4px);
+  }
+}
+
+section.banner .content .slider-image .item img.personaje {
+    height: 100vh;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+section.banner .content .slider-image .item {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    position: relative;
+    height: 100vh;
+    outline: none;
+}
+section.banner .content .slider-image {
+    width: 90%;
+    margin: 0 auto;
+    margin-left: 0;
+    padding-left: 5%;
+    opacity: 1;
+}
+section.banner .content .slider-image .item img.logo-uno {
+    padding-left: 0;
+    position: absolute;
+    top: 25%;
+    z-index: 2;
+    min-width: 480px;
+}
+section.banner .content .slider-image .item .info-evento {
+    position: absolute;
+    right: 0;
+    border: 2px solid #000000;
+    text-align: right;
+    padding: 35px;
+    width: 485px;
+    height: 430px;
+}
+section.banner .content .rrss-banner .media-links {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+section.banner .content .rrss-banner {
+    position: absolute;
+    top: 55%;
+    left: 5%;
+}
+section.banner .content .rrss-banner img {
+    widows: 100%;
+}
+section.banner .content .rrss-banner .media-links a {
+    font-size: 29px;
+    color: #000;
+}
+section.banner .content .slider-image .item .info-evento h2 {
+    margin: 0;
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 44px;
+    line-height: 115%;
+    text-align: right;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 28px;
+}
+section.banner .content .slider-image .item .info-evento > p {
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 120%;
+    color: #000000;
+    margin: 0;
+}
+section.banner .content .slider-image .item .info-evento .week p > span {
+    font-size: 24px;
+}
+section.banner .content .slider-image .item .info-evento .week p {
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 37px;
+    line-height: 30px;
+    text-align: right;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 10px 0 60px;
+}
+section.banner .content .slider-image .item .info-evento a.btn-cta {
+    display: flex;
+    background: #74664D;
+    width: 250px;
+    height: 50px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border-radius: 55px;
+    margin: 0 auto;
+    margin-right: 0;
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: right;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+.home section.inicio {
+    background: #F7F4EE;
+}
+.home section.inicio {
+    background: url(../image/cuerpo-home.png) #F7F4EE;
+    background-size: 100%;
+    height: calc(100vh - 20px);
+}
+section.banner {
+    background: url(../image/home_banner_d.jpg);
+    background-size: 100% 100%;
+}
+
+.home section.inicio .content.agenda.home {
+    max-width: 900px;
+    width: 100%;
+    background: none;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home section.inicio .content.agenda.home h2 {
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 30px;
+    line-height: 120%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #74664D;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.home section.inicio .content.agenda.home h2 span {
+    font-weight: normal;
+    font-family: ClanOT-Book;
+}
+.home section.inicio .content.agenda.home p {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #000000;
+}
+
+.home section.inicio .content.agenda.home .logos-home {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.home section.inicio .content.agenda.home .logos-home img {
+    margin: 0 27px;
+}
+
+.home section.inicio .content.agenda.home .logos-home img:nth-child(1) {
+    width: 120px;
+}
+
+.home section.inicio .content.agenda.home .logos-home img:nth-child(2) {
+    width: 117px;
+}
+
+.home section.inicio .content.agenda.home .logos-home img:nth-child(3) {
+    width: 81px;
+}
+.home .cronogramas.home {
+    background: url(../image/crono-home.png) #fff;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.agenda.home .logos {
+    background: #F7F4EE;
+}
+.home section.intermedio .content {
+    padding: 36px 0;
+}
+
+/*Media Mobile*/
+@media screen and (max-width: 767px) {
+    .cronogramas.home .content .bloques .bloque {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .home .cronogramas.home {
+        background: none;
+    }
+    .home section.intermedio .content .btn-cta {
+        width: 100%;
+    }
+    .home section.intermedio .content .btn-cta a.texto {
+        border: 2px solid #F7F4EE;
+        padding: 20px 45px;
+        display: block;
+        width: 100%;
+    }
+    .home section.inicio {
+        background: url(../image/m_cuerpo-home.png) #F7F4EE;
+        background-size: 100%;
+        padding: 140px 0;
+        background-repeat: no-repeat;
+        max-height: 660px;
+    }
+    .home section.inicio .content.agenda.home p {
+        font-size: 16px;
+        width: 95%;
+        margin: 15px auto;
+    }
+    .home section.inicio .content.agenda.home .logos-home img:nth-child(1) {
+    width: 93px;
+    }
+    .home section.inicio .content.agenda.home .logos-home img:nth-child(2) {
+        width: 91px;
+    }
+    .home section.inicio .content.agenda.home .logos-home img:nth-child(3) {
+        width: 63px;
+    }
+    .home section.inicio .content.agenda.home .logos-home img {
+        margin: 0 15px;
+    }
+    section.banner .content .slider-image {
+        width: 100%;
+        margin: 0 auto;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    section.banner .content .slider-image .item img.logo-uno {
+        padding-left: 5%;
+        position: absolute;
+        top: 87px;
+        width: 70%;
+        min-width: auto;
+    }
+    section.banner .content .slider-image .item img.personaje {
+        height: 65%;
+        width: auto;
+        position: absolute;
+        left: 25px;
+        z-index: 1;
+        bottom: 0;
+    }
+    section.banner .content .slider-image .item .info-evento {
+        position: absolute;
+        right: 5%;
+        border: 2px solid #000000;
+        text-align: right;
+        padding: 18px;
+        width: 90%;
+        height: 280px;
+        bottom: 110px;
+        margin: 0 auto;
+    }
+    section.banner .content .rrss-banner {
+        position: absolute;
+        top: 180px;
+        left: 5%;
+    }
+    section.banner .content .rrss-banner > img {
+        width: 63px;
+    }
+    section.banner .content .rrss-banner .media-links {
+        display: none;
+    }
+    section.banner {
+        background: url(../image/home_banner_m.jpg);
+        background-size: 100% 100%;
+        max-height: 640px;
+    }
+    section.banner .content .slider-image .item .info-evento h2 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    section.banner .content .slider-image .item .info-evento > p {
+        font-size: 16px;
+    }
+    section.banner .content .slider-image .item .info-evento .week p {
+        font-size: 28px;
+        line-height: 28px;
+        margin: 10px 0 30px;
+    }
+    section.banner .content .slider-image .item .info-evento .week p > span {
+        font-size: 18px;
+    }
+    section.banner .content .slider-image .item .info-evento a.btn-cta {
+        display: flex;
+        background: #74664D;
+        width: 195px;
+        font-size: 14px;
+    }
+    section.banner .content .slider-image .item {
+        height: 640px;
+    }
+    section.banner .content .slider-image .item .info-evento a.btn-cta img {
+        width: 16px;
+        margin-left: 10px;
+    }
+    section.banner .content .next {
+        bottom: 27px;
+        left: 40%;
+    }
+
+}
+
+/*Media lange*/
+@media screen and (min-width: 1699px) {
+    .home section.inicio {
+        background: url(../image/cuerpo-home.png) #F7F4EE;
+        background-size: 100%;
+        padding: 170px 0;
+        height: calc(100vh - 170px);
+    }
+    section.banner .content .slider-image .item img.logo-uno {
+        top: 25%;
+        width: 680px;
+    }
+    section.banner .content .slider-image .item img.personaje {
+        left: 50%;
+        z-index: 1;
+        transform: translateX(-50%);
+    }
+    section.banner .content .slider-image .item .info-evento {
+        padding: 50px;
+        width: 680px;
+        height: 680px;
+    }
+    section.banner .content .slider-image .item .info-evento h2 {
+        font-size: 60px;
+        line-height: 130%;
+    }
+    section.banner .content .slider-image .item .info-evento > p {
+        font-size: 30px;
+    }
+    section.banner .content .slider-image .item .info-evento .week p {
+        font-size: 50px;
+        line-height: 35px;
+    }
+    section.banner .content .slider-image .item .info-evento .week p > span {
+        font-size: 32px;
+    }
+    section.banner .content .slider-image .item .info-evento a.btn-cta {
+        width: 280px;
+        height: 55px;
+        font-size: 18px;
+        line-height: 55px;
+    }
+    section.banner .content .slider-image .item .info-evento a.btn-cta img {
+        margin-left: 10px;
+    }
+
+}

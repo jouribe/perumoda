@@ -1,0 +1,278 @@
+﻿@using System.Globalization
+@using PROMPERU.PERUMODA.BE
+@using PROMPERU.PERUMODA.Web.Managers
+@using PROMPERU.PERUMODA.Web.Resources
+@model PROMPERU.PERUMODA.BE.BloqueBE
+
+<!--suppress ALL -->
+
+@section Header
+{
+    <div class="top">
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="login">
+                <a href="@Url.Action("Login", "Usuario")">
+                    <img src="~/image/logout.svg" alt="@Global.Sign_In">
+                    @Global.Sign_In
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="login">
+                <a href="@Url.Action("Logout", "Usuario")">
+                    <img src="~/image/logout.svg" alt="">
+                    @Global.Greeting <strong>@Session["UsuarioNombre"]</strong>
+                </a>
+            </div>
+        }
+
+        <div class="language">
+            @{
+                foreach (Languages language in LanguageManager.AvailableLanguages)
+                {
+                    @Html.ActionLink(language.LanguageFullName, "ChangeLanguage", "Home", new {lang = language.LanguageCultureName}, new {@class = Html.Raw(Context.Request.Cookies["culture"]?.Value == language.LanguageCultureName ? "active" : "")})
+                }
+            }
+        </div>
+    </div>
+
+    <div class="volver">
+        <a href="@Url.Action("Index", "Home")">
+            <img src="~/image/btn-back.svg" alt=""> @Global.Back
+        </a>
+    </div>
+
+    <div class="logos">
+
+        @if (Model.BloqueId == 2 || Model.BloqueId == 5)
+        {
+            <picture>
+                <source srcset="~/image/m_perumoda-adex.svg" media="(min-width: 300px) and (max-width: 768px)">
+                <img src="~/image/perumoda-adex.svg" alt="@Model.BloqueNombre">
+            </picture>
+        }
+        else
+        {
+            <img src="~/image/perumoda_blanco.svg" alt="@Model.BloqueNombre">
+        }
+
+        <h2>@Html.Raw(Context.Request.Cookies["culture"]?.Value == "es-PE" ? Model.BloqueNombre : Model.BloqueNombreEN)</h2>
+        <h3>@Html.Raw(Context.Request.Cookies["culture"]?.Value == "es-PE" ? Model.BloqueSubtitulo : Model.BloqueSubtituloEN)</h3>
+    </div>
+
+    <div class="btn-cta">
+        @if (!ViewBag.Suscrito && User.Identity.IsAuthenticated)
+        {
+            using (Html.BeginForm("RegistrarBloque", "Bloque", null, FormMethod.Post, new {id = "frmSubscribeForum"}))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.Hidden("BloqueId", Model.BloqueId)
+                @Html.Hidden("UsuarioId", Session["UsuarioId"].ToString())
+            }
+
+            <a href="javascript:subscribeToForum();" class="suscripcion texto suscribeAbrir">
+                <p>
+                    @Global.Access_Forum <br><strong>@Global.Subscribe_Here</strong>
+                </p>
+            </a>
+
+            <script type="text/javascript">
+                subscribeToForum = () => {
+                    setTimeout(() => {
+                        document.getElementById("frmSubscribeForum").submit()
+                    },1000)
+                }
+            </script>
+        }
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <a href="@Url.Action("Registro", "Usuario")" class="texto">
+                <p>
+                    @Global.Sign_Up_Title_To <br><strong>@Global.Access_To</strong>
+                </p>
+            </a>
+        }
+
+        @if (ViewBag.Suscrito && User.Identity.IsAuthenticated && DateTime.Now < Model.BloqueFechaInicio)
+        {
+            <a href="javascript:void(0);" class="anuncio texto suscribeAbrir" style="cursor: default">
+                <p>
+                    @Global.Soon <br><strong>@Global.Live_Stream_Soon</strong>
+                </p>
+            </a>
+        }
+
+        @if (ViewBag.Suscrito && User.Identity.IsAuthenticated && DateTime.Now >= Model.BloqueFechaInicio && DateTime.Now <= Model.BloqueFechaFin)
+        {
+            <a href="@Model.BloqueTransmision" class="live" style="text-transform: uppercase">
+                <p>
+                    <img src="~/image/play.svg" alt="@Model.BloqueNombre"> @Global.Live_Stream
+                </p>
+            </a>
+        }
+    </div>
+}
+
+<section class="inicio">
+    <div class="content agenda">
+        <div class="cronograma-crono">
+            <div class="content">
+                <div class="crono-table">
+                    <div class="table-tabs">
+                        <ul class="tabs solo-desktop">
+                            @{
+                                int dias = Model.BloqueFechaFin.Day - Model.BloqueFechaInicio.Day;
+                            }
+
+                            @for (int i = 0; i <= dias; i++)
+                            {
+                                if ((ViewBag.Eventos as List<EventoBE>).Any(x => x.EventoFecha == Model.BloqueFechaInicio.AddDays(i).Date))
+                                {
+                                    <li class="tab">
+                                        <a @Html.Raw(i == 0 ? "class='active'" : "") href="#dia@(i)">
+                                            @Model.BloqueFechaInicio.AddDays(i).ToString("dddd dd", new CultureInfo(Context.Request.Cookies["culture"]?.Value ?? "es-PE"))
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                        <div class="lista-dias solo-movil">
+                            <div class="select-dias">
+                                <select name="dias" id="dias" class="diasSelect">
+                                    @for (int i = 0; i <= dias; i++)
+                                    {
+                                        if ((ViewBag.Eventos as List<EventoBE>).Any(x => x.EventoFecha == Model.BloqueFechaInicio.AddDays(i).Date))
+                                        {
+                                            <option value="dia@(i)" @Html.Raw((i == 0) ? "selected" : "")>
+                                                @Model.BloqueFechaInicio.AddDays(i).ToString("dddd dd", new CultureInfo(Context.Request.Cookies["culture"]?.Value ?? "es-PE"))
+                                            </option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    @for (int i = 0; i <= dias; i++)
+                    {
+                        if ((ViewBag.Eventos as List<EventoBE>).Any(x => x.EventoFecha == Model.BloqueFechaInicio.AddDays(i).Date))
+                        {
+                            <div id="dia@(i)" class="table-content">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                    <tbody>
+                                    @foreach (EventoBE evento in ViewBag.Eventos)
+                                    {
+                                        if (evento.EventoFecha == Model.BloqueFechaInicio.Date.AddDays(i))
+                                        {
+                                            <tr>
+                                                <td>
+                                                    <div class="evento">
+                                                        <div class="horario">
+                                                            <span>@evento.EventoHoraInicio - @evento.EventoHoraFin</span>
+                                                        </div>
+                                                        <div class="contenido">
+                                                            <p>@Html.Raw(Context.Request.Cookies["culture"]?.Value == "es-PE" ? evento.EventoTitulo : evento.EventoTituloEN)</p>
+                                                            <span>@Html.Raw(Context.Request.Cookies["culture"]?.Value == "es-PE" ? evento.EventoExpositor : evento.EventoExpositorEN)</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="intermedio">
+    <div class="content">
+        <div class="texto">
+            <p>@Global.Subscribe</p>
+            <h2>@Html.Raw(Context.Request.Cookies["culture"]?.Value == "es-PE" ? Model.BloqueNombre : Model.BloqueNombreEN)</h2>
+        </div>
+        <div class="btn-cta">
+            @if (!ViewBag.Suscrito && User.Identity.IsAuthenticated)
+            {
+                using (Html.BeginForm("RegistrarBloque", "Bloque", null, FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.Hidden("BloqueId", Model.BloqueId)
+                    @Html.Hidden("UsuarioId", Session["UsuarioId"].ToString())
+                }
+
+                <a href="javascript:void(0);" class="suscripcion texto suscribeAbrir">
+                    <p>
+                        @Global.Access_Forum <br><strong>@Global.Subscribe_Here</strong>
+                    </p>
+                </a>
+            }
+
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <a href="@Url.Action("Registro", "Usuario")" class="texto">
+                    <p>
+                        @Global.Sign_Up_Title_To <br><strong>@Global.Access_To</strong>
+                    </p>
+                </a>
+            }
+
+            @if (ViewBag.Suscrito && User.Identity.IsAuthenticated && DateTime.Now < Model.BloqueFechaInicio)
+            {
+                <a href="javascript:void(0);" class="anuncio texto suscribeAbrir" style="cursor: default">
+                    <p>
+                        @Global.Soon <br><strong>@Global.Live_Stream_Soon</strong>
+                    </p>
+                </a>
+            }
+
+            @if (ViewBag.Suscrito && User.Identity.IsAuthenticated && DateTime.Now >= Model.BloqueFechaInicio && DateTime.Now <= Model.BloqueFechaFin)
+            {
+                <a href="@Model.BloqueTransmision" class="live" style="text-transform: uppercase">
+                    <p>
+                        <img src="~/image/play.svg" alt="@Model.BloqueNombre"> @Global.Live_Stream
+                    </p>
+                </a>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="cronogramas">
+    @{
+        Html.RenderAction("Bloques", new {id = Model.BloqueId});
+    }
+</section>
+
+<div id="suscribe" class="tlegales" style="display: none;">
+    <div class="legales-content">
+        <a href="javascript:void(0)" id="close">
+            <img src="~/image/close.svg" alt="">
+        </a>
+        <div class="legales-txt">
+            <div class="content-legales">
+                <div class="sa">
+                    <div class="sa-success">
+                        <div class="sa-success-tip"></div>
+                        <div class="sa-success-long"></div>
+                        <div class="sa-success-placeholder"></div>
+                        <div class="sa-success-fix"></div>
+                    </div>
+                </div>
+                <h2>@Global.Subscribe_Successful</h2>
+                <p>@Global.Access_Now</p>
+            </div>
+        </div>
+    </div>
+</div>

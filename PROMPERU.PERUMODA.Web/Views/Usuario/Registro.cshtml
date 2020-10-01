@@ -1,0 +1,314 @@
+﻿@using PROMPERU.PERUMODA.BE
+@using PROMPERU.PERUMODA.Web.Managers
+@using PROMPERU.PERUMODA.Web.Resources
+@model PROMPERU.PERUMODA.Web.Models.Usuario
+
+@section Header
+{
+    <div class="volver">
+        <a href="@Url.Action("Index", "Home")">
+            <img src="~/image/btn-back.svg" alt=""> @Global.Back
+        </a>
+    </div>
+
+    <div class="logos">
+        <img src="~/image/perumoda_green.svg" alt="Perú Moda Deco">
+        <img src="~/image/feel_live.svg" alt="Feel & Live Sustaintable">
+    </div>
+
+    <div class="language">
+        @{
+            foreach (Languages language in LanguageManager.AvailableLanguages)
+            {
+                @Html.ActionLink(language.LanguageFullName, "ChangeLanguage", "Home", new {lang = language.LanguageCultureName}, new {@class = Html.Raw(Context.Request.Cookies["culture"]?.Value == language.LanguageCultureName ? "active" : "")})
+            }
+        }
+    </div>
+}
+
+<section class="inicio">
+    <div class="content registro">
+        <img src="~/image/registro.png" alt="Perú Moda">
+        <div class="form registro">
+            <div class="content">
+                <div class="form-participa inner">
+                    @using (Html.BeginForm("Registro", "Usuario", null, FormMethod.Post, new {@class = "form-register", id = "frmRegistro"}))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="header-form">
+                            <h3>@Global.Sign_Up_Title</h3>
+                            <p>@Global.Access_Sign_Up</p>
+                        </div>
+                        <div class="campos">
+                            <div class="form-row form-row-half">
+                                <div class="form-holder form-holder-2">
+                                    <label class="form-row-inner">
+                                        <input style="display:none;" type="number" id="origen" name="origen" value="2">
+                                        @Html.LabelFor(m => m.Nombres, $"{Global.Form_First_Name}*", new {@class = "label"})
+                                        @Html.TextBoxFor(m => m.Nombres, new {id = "txtNombres", @class = "form-control nombre", onblur = "verifL(this)", onkeyup = "verifL(this); ocultarErrores()", maxlength = "120", required = "required"})
+                                        @Html.ValidationMessageFor(m => m.Nombres, "", new {@class = "error", id = "lbNombres", style="display: none;"})
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row form-row-half">
+                                <div class="form-holder form-holder-2">
+                                    <label class="form-row-inner">
+                                        @Html.LabelFor(m => m.Apellidos, $"{Global.Form_Last_Name}*", new {@class = "label"})
+                                        @Html.TextBoxFor(m => m.Apellidos, new {id = "txtApellidos", @class = "form-control apellido", onblur = "verifL(this)", onkeyup = "verifL(this); ocultarErrores()", maxlength = "120", required = "required"})
+                                        @Html.ValidationMessageFor(m => m.Apellidos, "", new {@class = "error", id = "lbApellidos", style="display: none;"})
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row form-email form-row-half">
+                                <div class="form-holder form-holder-2">
+                                    <label class="form-row-inner">
+                                        @Html.LabelFor(m => m.CorreoElectronico, $"{Global.Form_Email}*", new {@class = "label"})
+                                        @Html.TextBoxFor(m => m.CorreoElectronico, new {id = "txtCorreoElectronico", @class = "form-control email", onblur = "verifEmail(this)", onkeyup = "verifEmail(this); ocultarErrores()", maxlength = "120", required = "required"})
+                                        @Html.ValidationMessageFor(m => m.CorreoElectronico, "", new {@class = "error", id = "lbEmail", style="display: none;"})
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row form-row-half documentos">
+                                <div class="form-row form-row-half">
+                                    <div class="form-holder form-holder-2 form-holder-half form-select">
+                                        <label class="form-row-inner">
+                                            @Html.LabelFor(m => m.TipoDocumento, $"{Global.Form_Document_Type}*", new {@class = "label"})
+                                            @Html.DropDownListFor(m => m.TipoDocumento, new SelectList(ViewBag.TipoDocumentos, "UsuarioTipoDocumentoId", "UsuarioTipoDocumentoDescripcion"), Global.Form_Select, new {id = "ddlTipoDocumento", required = "required", onchange = "ocultarErrores()"})
+                                            @Html.ValidationMessageFor(m => m.TipoDocumento, "", new {@class = "error", id = "lbTipoDoc", style="display: none;"})
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-row form-row-half">
+                                    <div class="form-holder form-holder-2 form-holder-half">
+                                        <label class="form-row-inner">
+                                            @Html.LabelFor(m => m.NumeroDocumento, $"{Global.Form_Document_Number}*", new {@class = "label"})
+                                            @Html.TextBoxFor(m => m.NumeroDocumento, new {id = "txtNumeroDocumento", @class = "form-control dni", onblur = "verifDNI(this)", onkeyup = "verifDNI(this); ocultarErrores()", maxlength = "15", required = "required"})
+                                            @Html.ValidationMessageFor(m => m.NumeroDocumento, "", new {@class = "error", id = "lbDNI", style="display: none;"})
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row form-cel form-row-half">
+                                <div class="form-holder form-holder-2">
+                                    <label class="form-row-inner">
+                                        @Html.LabelFor(m => m.NumeroTelefono, $"{Global.Form_Contact_Phone}*", new {@class = "label"})
+                                        @Html.TextBoxFor(m => m.NumeroTelefono, new {id = "txtNumeroTelefono", @class = "form-control celular", onblur = "verifTelefono(this)", onkeyup = "verifTelefono(this); ocultarErrores()", maxlength = "15", required = "required"})
+                                        @Html.ValidationMessageFor(m => m.NumeroTelefono, "", new {@class = "error", id = "lbCelular", style="display: none;"})
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row form-cel form-row-half">
+                                <div class="form-holder form-holder-2">
+                                    <label class="form-row-inner">
+                                        @Html.LabelFor(m => m.RazonSocial, $"{Global.Form_Social} ({Global.Form_Mandatory})", new {@class = "label"})
+                                        @Html.TextBoxFor(m => m.RazonSocial, new {id = "txtRazonSocial", @class = "form-control razonSocial", maxlength = "150"})
+                                        @Html.ValidationMessageFor(m => m.RazonSocial, "", new {@class = "error", id = "lbrazonSocial", style="display: none;"})
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row form-row-half">
+                                <div class="form-holder form-holder-2 form-holder-half form-select">
+                                    <label class="form-row-inner">
+                                        @Html.LabelFor(m => m.Pais, $"{Global.Form_Country}*", new {@class = "label"})
+                                        @Html.DropDownListFor(m => m.Pais, new SelectList(ViewBag.Paises, "PaisId", "PaisNombre"), Global.Form_Select_Country, new {id = "ddlPais", required = "required", onchange = "ocultarErrores()"})
+                                        @Html.ValidationMessageFor(m => m.Pais, "", new {@class = "error", id = "lbPais", style="display: none;"})
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row form-row-half">
+                                <div class="form-holder form-holder-2 form-holder-half form-select">
+                                    <label class="form-row-inner">
+                                        @Html.LabelFor(m => m.Region, $"{Global.Form_Region}*", new {@class = "label"})
+                                        @Html.TextBoxFor(m => m.Region, new {id = "txtRegion", @class = "form-control celular", maxlength = "120", required = "required"})
+                                        @Html.ValidationMessageFor(m => m.Region, "", new {@class = "error", id = "lbRegion", style="display: none;"})
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2 form-holder-half form-select">
+                                    <label class="form-row-inner">
+                                        @Html.LabelFor(m => m.TipoUsuario, $"{Global.Form_User_Type}*", new {@class = "label"})
+                                        @Html.DropDownListFor(m => m.TipoUsuario, new SelectList(ViewBag.TipoUsuarios, "TipoUsuarioId", "TipoUsuarioDescripcion"), Global.Form_Select_Option, new {id = "ddlTipoUsuario", required = "required", onchange = "ocultarErrores()"})
+                                        @Html.ValidationMessageFor(m => m.TipoUsuario, "", new {@class = "error", id = "lbGrupo", style="display: none;"})
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-row form-row-seminarios">
+                                <p>@Global.Form_Select_Forums*</p>
+
+                                @foreach (BloqueBE bloque in ViewBag.Bloques)
+                                {
+                                    <div class="form-holder form-holder-2 flex">
+                                        <input id="chkBloque@(bloque.BloqueId)" class="checkbox-custom" name="Bloques" value="@bloque.BloqueId" type="checkbox" onclick="ocultarErrores()">
+                                        <label for="chkBloque@(bloque.BloqueId)" class="checkbox-custom-label "></label>
+                                        <span class="checkbox-custom-span">@Html.Raw(Context.Request.Cookies["culture"]?.Value == "es-PE" ? bloque.BloqueNombre : bloque.BloqueNombreEN)</span>
+                                    </div>
+                                }
+                                @Html.ValidationMessage("", "", new { @class = "error", id = "lbBloques", style = "display: none;" })
+                            </div>
+                            <div class="form-row form-row-tyc">
+                                <div class="form-holder form-holder-2 flex">
+                                    <input id="chkTerminosCondiciones" class="checkbox-custom" name="tyc" type="checkbox" onclick="ocultarErrores()" checked>
+                                    <label for="chkTerminosCondiciones" class="checkbox-custom-label "></label>
+                                    <span class="checkbox-custom-span">
+                                        @Global.Form_Privacy_Accept
+                                        @if (Context.Request.Cookies["culture"]?.Value == "es-PE")
+                                        {
+                                            <a href="#tlegales" id="tycAbrir" onclick="$('#tlegales').show(300);">@Global.Form_Privacy</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="#tlegalesEng" id="tycAbrir" onclick="$('#tlegalesEng').show(300);">@Global.Form_Privacy</a>
+                                        }
+                                    </span>
+                                </div>
+                                <div class="form-holder form-holder-2 flex">
+                                    <input id="chkAutorizoCompartirDatos" class="checkbox-custom" name="AutorizoCompartir" type="checkbox" onclick="ocultarErrores()" checked>
+                                    <label for="chkAutorizoCompartirDatos" class="checkbox-custom-label "></label>
+                                    <span class="checkbox-custom-span">@Global.Form_Authorize_1 <strong>PROMPERÚ</strong> @Global.Form_Authorize_2.</span>
+                                </div>
+                                <span class="error" id="lbTYC" style="display: none;position: absolute;background: #F00303;color: #FFF;bottom: -10px;right: 5px;font-size: 10px;padding: 3px 5px;border-radius: 3px;opacity: 0.9;"></span>
+                            </div>
+                            <div class="form-row form-row-btn">
+                                <div class="form-holder form-holder-2">
+                                    <button type="submit" id="btnRegistrarUsuario" class="enviar">
+                                        <span>@Global.Sign_Up_Title</span>
+                                        <img src="~/image/btn-sig.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="otro-form">
+                        <p>@Global.Sign_Up_Already, <a href="@Url.Action("Login", "Usuario")">@Global.Sign_In</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@if (Context.Request.Cookies["culture"]?.Value == "es-PE")
+{
+    <div id="tlegales" class="tlegales" style="display: none;">
+        <div class="legales-content">
+            <a href="javascript:void(0)" id="close">
+                <img src="~/image/close.svg" alt="">
+            </a>
+            <div class="legales-txt">
+                <h2>AVISO DE PRIVACIDAD</h2>
+                <div class="content-legales">
+                    <p>En la Comisión de Promoción del Perú para la Exportación y el Turismo, en adelante <strong>PROMPERÚ</strong>, somos conscientes de la elevada consideración que tiene la privacidad de los ciudadanos, colaboradores y de todas aquellas personas que se interesan por nuestros productos y servicios. Por tal razón, en conformidad con lo establecido en la Ley N° 29733, Ley de Protección de Datos Personales y/o sus normas reglamentarias, complementarias, modificatorias, sustitutorias y demás disposiciones aplicables (en adelante, “La Ley”), tenemos el compromiso de respetar su privacidad y proteger la confidencialidad de sus datos personales. El objetivo del presente aviso es dar a conocer la manera en que se recogen, se tratan y se protegen los datos personales a los que accedemos en el ejercicio de nuestras funciones y actividades.</p>
+                    <br>
+                    <h3>TRATAMIENTO DE DATOS PERSONALES</h3>
+                    <p>Se entiende por tratamiento de datos personales a cualquier operación o procedimiento técnico, automatizado o no, que permite la recopilación, registro, organización, almacenamiento, conservación, elaboración, modificación, consulta, utilización, bloqueo, supresión, comunicación por transferencia o por difusión, o cualquier otra forma de procesamiento que facilite el acceso, correlación o interconexión de los datos personales.</p>
+                    <p>Los datos personales recopilados por <strong>PROMPERÚ</strong>, mediante sus diversas plataformas y canales, podrán ser tratados, según aplique, para llevar a cabo las finalidades inherentes a la actividad de la organización, tales como:</p>
+                    <ul>
+                        <li>Promoción del Turismo.</li>
+                        <li>Promoción de las Exportaciones.</li>
+                        <li>Atención de solicitudes de uso de la Marca Perú.</li>
+                        <li>Contactabilidad para la absolución de consultas y reclamos.</li>
+                        <li>Servicios de provisión de información.</li>
+                        <li>Participación en eventos, sorteos y promociones.</li>
+                        <li>Control de visitantes.</li>
+                        <li>Personalizar/mejorar su experiencia en nuestras plataformas.</li>
+                    </ul>
+                    <p>Los datos personales son recopilados para los fines expuestos previamente, y no se extenderá a otra finalidad que no haya sido la establecida de manera inequívoca como tal al momento de su recopilación, excluyendo los casos de actividades de valor histórico, estadístico o científico cuando se utilice un procedimiento de disociación o anonimización.</p>
+                    <br>
+                    <h3>CONSENTIMIENTO</h3>
+                    <p><strong>PROMPERÚ</strong> realizará tratamiento sobre datos personales obtenidos con el consentimiento previo, expreso e informado del titular de los datos personales, de manera indefinida o hasta que revoque su consentimiento. Es responsabilidad del titular de los datos personales leer detenidamente el presente Aviso de Privacidad, debido a que, mediante su aceptación, usted otorga el consentimiento, informado e inequívoco, para el tratamiento de los datos acorde a las finalidades expuestas.</p>
+                    <p>Los datos proporcionados serán almacenados por <strong>PROMPERÚ</strong>, ubicado en Calle Uno Oeste 050, Edificio de Mincetur, Piso 14, San Isidro, Lima.</p>
+                    <br>
+                    <h3>CONFIDENCIALIDAD DE LA INFORMACIÓN</h3>
+                    <p><strong>PROMPERÚ</strong> guardará confidencialidad respecto a los datos personales proporcionados, de manera voluntaria, siendo que los mismos no serán remitidos a terceros ajenos a <strong>PROMPERÚ</strong>, salvo que se trate de un tercero encargado del tratamiento, conforme a lo indicado en el numeral 7 del artículo 2 de La Ley, bajo condiciones de seguridad y confidencialidad de la información; o, cuando por resolución judicial consentida y ejecutoriada; o, razones fundadas relativas a la defensa nacional, seguridad pública o la sanidad pública, <strong>PROMPERÚ</strong> se encuentre obligada a comunicar la referida información.</p>
+                    <br>
+                    <h3>SEGURIDAD DE LOS DATOS PERSONALES</h3>
+                    <p>En cumplimiento de la normativa vigente, <strong>PROMPERÚ</strong> adopta las medidas técnicas y organizativas que resulten apropiadas para mantener la seguridad de los datos personales, con el objetivo de evitar su alteración, pérdida, tratamiento o acceso no autorizado que puedan afectar a la integridad, confidencialidad y disponibilidad de los datos personales.</p>
+                    <br>
+                    <h3>USO DE COOKIES Y PRIVACIDAD</h3>
+                    <p>Con la finalidad de personalizar/mejorar la experiencia de los usuarios de nuestras plataformas web, <strong>PROMPERÚ</strong> podrá emplear cookies, web beacons o tecnologías similares de recolección de datos. La información recolectada en este proceso incluye, a título enunciativo, más no limitativo:</p>
+                    <ol type="i">
+                        <li>La dirección IP de un usuario (Ej. yahoo.com – 192.168.1.1).</li>
+                        <li>El tipo de navegador web (Ej. Microsoft Internet Explorer) y de sistema operativo (Ej. Windows).</li>
+                        <li>Las páginas del sitio que un usuario visita.</li>
+                        <li>Otros sitios web que un usuario ha visitado antes de visitar el nuestro.</li>
+
+                    </ol>
+                    <p>Las cookies no recopilan, ni contienen su nombre o dirección de correo electrónico. Además, el usuario tendrá la opción de desactivarlas mediante la configuración de su navegador. Se debe tener en cuenta que, al desactivar las cookies, quizás no pueda utilizar algunas funciones personalizadas de nuestras plataformas web.</p>
+                    <p>
+                        Las web beacons son gráficos de 1×1, de un solo pixel, que permiten contar el número de usuarios que han visitado una página web en particular, o bien obtenido acceso a determinadas cookies. Podemos usar los web beacons en para contar los usuarios, así como para reconocer a los mismos al obtener acceso a nuestras cookies. Al igual que las cookies, los web beacons no recopilan, ni contienen su nombre o dirección de e-mail.
+                    </p>
+                    <br>
+                    <h3>REDES SOCIALES</h3>
+                    <p>En el escenario que, para facilitar su registro a nuestras plataformas web, usted emplee una cuenta de Redes Sociales (Ej. Facebook, Twitter), es importante señalar que <strong>PROMPERÚ</strong> podrá acceder a los datos que usted haya dispuesto en estos servicios, incluyendo información de sus contactos.</p>
+                    <p>Su decisión de usar los servicios de las Redes Sociales es siempre voluntaria; sin embargo, debe asegurarse que está de acuerdo con la información que éstos pueden poner a nuestra disposición, leyendo las políticas de privacidad de estos servicios.</p>
+                    <br>
+                    <h3>EJERCICIO DE DERECHOS</h3>
+                    <p>Conforme a la Ley, el titular de los datos personales podrá ejercer sus derechos de acceso, rectificación, cancelación y oposición o informarse sobre el manejo de su información, enviando su solicitud mediante correo electrónico a la dirección <a href="mailto:datospersonales@promperu.gob.pe">datospersonales@promperu.gob.pe</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div id="tlegalesEng" class="tlegales" style="display: none;">
+        <div class="legales-content">
+            <a href="javascript:void(0)" id="close">
+                <img src="~/image/close.svg" alt="">
+            </a>
+            <div class="legales-txt">
+                <h2>PRIVACY NOTICE</h2>
+                <div class="content-legales">
+                    <p>At Comisión de Promoción del Perú para la Exportación y el Turismo, hereinafter PROMPERU, we understand the importance of privacy to individuals, collaborators and all who are interested in our products and services. Therefore, in accordance with the provisions of Law N° 29733, the Personal Data Protection Act and/or its executive regulations, complementary regulations, modifications, replacement legislation and other applicable provisions (hereinafter "The Act"), we are committed to respecting your privacy and protecting the confidentiality of your personal data. The purpose of this notice is to publish how we collect, use and protect the personal data of those with whom we interact in the exercise of our functions and activities.</p>
+                    <br>
+                    <h3>USE OF PERSONAL DATA</h3>
+                    <p>Use of personal data means any technical operation or procedure, whether automated or not, involving the collection, recording, organization, storage, conservation, elaboration , modification, consultation, use, blocking, suspension, communication by transfer or diffusion, or any other form of processing that facilitates access, correlation or interconnection with personal data.</p>
+                    <p>The personal data collected by PROMPERU from its different platforms and channels, may be used, as applicable, to pursue the aims of the organization, such as:</p>
+                    <ul>
+                        <li>Promoting tourism.</li>
+                        <li>Promoting exports.</li>
+                        <li>Answering requests to use the Marca Peru brand.</li>
+                        <li>Responding to queries and claims.</li>
+                        <li>Information provision services .</li>
+                        <li>Participation in events, awards and promotions.</li>
+                        <li>Monitoring visitors.</li>
+                        <li>Personalizing/improving user experiences of our platforms.</li>
+                    </ul>
+                    <p>Personal data are collected for the purposes described above and shall not be used for any other purpose not stated unequivocally when they are collected, with the exception of activities of historical statistical or scientific value, in which case a process of dissociation or anonymization is used.</p>
+                    <br>
+                    <h3>CONSENT</h3>
+                    <p>PROMPERU will use personal data obtained with the prior, specific and informed consent of the owner of the personal data. Owners of personal data are responsible for reading this privacy notice carefully, given that acceptance means that you give your permission for the data to be used for the purposes described.</p>
+                    <br>
+                    <h3>COMMUNICATION OF PERSONAL DATA</h3>
+                    <p>Personal details provided will not be sent to third parties other than PROMPERU, with the exception of third parties entrusted to use the data in accordance with numeral 10, article 2 of the Act, who must ensure the security and confidentiality of the information; or when PROMPERU is required by the Act or a court order to provide this information to public bodies, the courts and/or the police or other legitimate third parties.</p>
+                    <br>
+                    <h3>PERSONAL DATA SECURITY</h3>
+                    <p>In compliance with current legislation, PROMPERU shall take such technical measures as may be necessary and appropriate to ensure the security of personal data, in order to prevent them from being altered, lost, used or provided to any unauthorized person in a way that may affect the integrity, confidentiality and availability of the personal data.</p>
+                    <br>
+                    <h3>USE OF COOKIES AND PRIVACY</h3>
+                    <p>In order to personalize/improve the experience of users of our website, PROMPERU may use cookies, web beacons or similar data collection technologies. The data collected in this process includes, but is not limited to, the following:</p>
+                    <ol type="i">
+                        <li>A user's IP address (e.g. yahoo.com – 192.168.1.1).</li>
+                        <li>Type of web browser Microsoft Internet Explorer) and operating system (e.g. Windows).</li>
+                        <li>The site pages seen by visitors.</li>
+                        <li>Other websites visited by users before ours.</li>
+
+                    </ol>
+                    <p>The cookies do not collect or contain your name or e-mail address. Furthermore, users may disable them through their browser's configuration function. It must be remembered that of cookies are disabled you may not be able to use certain personalized functions of our website.</p>
+                    <p>Web beacons are 1 x 1 graphics of one pixel that count the number of users who have visited a given website, or obtained access to certain cookies. We may use web beacons to count users and to identify those obtaining access to our cookies. Like cookies, web beacons do not collect or contain your name or e-mail address.</p>
+                    <br>
+                    <h3>SOCIAL NETWORKS</h3>
+                    <p>If you gain access to our web platforms through a social media account (e.g. Facebook, Twitter), it is important to point out that PROMPERU may gain access to the date you give to these services, including information on your contacts.</p>
+                    <p>Your decision to use social networks is always voluntary; however, you must ensure that you agree with the information that they may make available to us by reading their privacy policies.</p>
+                    <br>
+                    <h3>EXERCISING YOUR RIGHTS</h3>
+                    <p>In accordance with the Act, owners of personal data may exercise their right to access, rectify, cancel and object by sending an e-mail to the following address <a href="mailto:datospersonales@promperu.gob.pe">datospersonales@promperu.gob.pe</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,46 @@
+﻿@using PROMPERU.PERUMODA.Web.Managers
+
+@section Header
+{
+    <div class="volver">
+        <a href="@Url.Action("Index", "Home")">
+            <img src="~/image/btn-back.svg" alt=""> Regresar
+        </a>
+    </div>
+
+    <div class="logos">
+        <img src="~/image/perumoda_green.png" alt="Perú Moda Deco">
+        <img src="~/image/feel_live.png" alt="Feel & Live Sustaintable">
+    </div>
+
+    <div class="language">
+        @{
+            foreach (Languages language in LanguageManager.AvailableLanguages)
+            {
+                @Html.ActionLink(language.LanguageFullName, "ChangeLanguage", "Home", new {lang = language.LanguageCultureName}, new {@class = Html.Raw(Context.Request.Cookies["culture"]?.Value == language.LanguageCultureName ? "active" : "") })
+            }
+        }
+    </div>
+}
+
+<section class="inicio">
+    <div class="content login gracias">
+        <img src="~/image/cuerpo-login.png" alt="Perú Moda">
+        <div class="form registro gracias">
+            <div class="content">
+                <div class="content-gracias">
+                    <div class="sa">
+                        <div class="sa-success">
+                            <div class="sa-success-tip"></div>
+                            <div class="sa-success-long"></div>
+                            <div class="sa-success-placeholder"></div>
+                            <div class="sa-success-fix"></div>
+                        </div>
+                    </div>
+                    <h2>Gracias por registrarte</h2>
+                    <p>Ya puedes acceder a las ponencias de tu elección en <br><strong>Perú Moda & Moda Deco</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

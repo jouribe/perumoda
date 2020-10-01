@@ -1,0 +1,39 @@
+﻿@using System.Globalization
+@using PROMPERU.PERUMODA.BE
+@using PROMPERU.PERUMODA.Web.Resources
+@model List<PROMPERU.PERUMODA.BE.BloqueBE>
+
+<div class="content">
+    <h2>@Global.Schedule</h2>
+    <p>@Global.Know</p>
+    <div class="bloques">
+        @foreach (BloqueBE bloque in Model)
+        {
+            <div class="bloque">
+                <a href="@Url.RouteUrl("Bloques", new {slug = bloque.BloqueSlug})">
+                    @if (Context.Request.Cookies["culture"] != null)
+                    {
+                        if (Context.Request.Cookies["culture"].Value == "en-US")
+                        {
+                            <h3>@bloque.BloqueNombreEN</h3>
+                        }
+                        else
+                        {
+                            <h3>@bloque.BloqueNombre</h3>
+                        }
+                    }
+                    
+                    <div class="week">
+                        <p>
+                            @bloque.BloqueFechaInicio.ToString("dd")-@bloque.BloqueFechaFin.ToString("dd") <br>
+                            <span>@bloque.BloqueFechaInicio.ToString("MMMM", new CultureInfo(Context.Request.Cookies["culture"]?.Value ?? "es-PE"))</span>
+                        </p>
+                        <span class="arrow">
+                            <img src="~/image/btn-sig.svg" alt="">
+                        </span>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>

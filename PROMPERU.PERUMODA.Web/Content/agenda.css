@@ -1,0 +1,914 @@
+.agenda header {
+    background: url(../Image/cabercera-internas.png) #C0B691;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: auto;
+}
+
+.agenda header .content .top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+}
+
+.agenda header .content .top .language {
+    width: auto;
+}
+
+.agenda header .content .top .login a img {
+    vertical-align: bottom;
+    margin-right: 4px;
+}
+
+.agenda header .content {
+    align-items: center;
+}
+
+.agenda header .content .top .login a {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: normal;
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+.agenda header .content .volver {
+    width: 100%;
+    display: block;
+    padding-top: 0;
+}
+
+.agenda header .content .volver a {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.015em;
+    color: #74664D;
+}
+
+.agenda header .content .logos,
+.agenda header .content .btn-cta {
+    width: 50%;
+}
+
+.agenda header .content .logos {
+    padding: 25px 0 44px;
+    padding-left: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.agenda header .content .logos h2 {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 31px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.agenda header .content .logos h3 {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 18px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+}
+
+.agenda header .content .btn-cta {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding-right: 122px;
+    margin-bottom: 55px;
+}
+
+.agenda header .content .btn-cta a.texto {
+    border: 2px solid #000000;
+    padding: 24px 45px;
+}
+
+.agenda header .content .btn-cta a.texto p {
+    margin: 0;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.agenda header .content .btn-cta a.texto p strong {
+    font-family: ClanOT;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.formularios .inicio > .content.agenda {
+    background: url(../image/cuerpo-agenda.png);
+    background-position: top 130px right;
+    background-size: 9%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.table-content table {
+    width: 90%;
+    margin: 33px auto 60px;
+}
+
+.table-content table tbody tr {
+    border-bottom: 1px solid #C0B691;
+}
+
+.table-content table tbody tr td {
+    padding: 27px 0;
+}
+
+.table-content table tbody tr td .evento {
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.table-content table tbody tr td .evento .horario span {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 120%;
+    color: #74664D;
+    margin-right: 15px;
+}
+
+.table-content table tbody tr td .evento .contenido p {
+    margin: 0;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+    color: #000000;
+}
+
+.table-content table tbody tr td .evento .contenido span {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+}
+
+.tabs .tab {
+    width: 24.7%;
+    margin: 0 auto;
+    height: 82px;
+    line-height: normal;
+}
+
+.tabs .tab a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-transition: color .28s ease, background-color .28s ease;
+    transition: color .28s ease, background-color .28s ease;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.crono-table .table-tabs .tabs {
+    position: relative;
+    height: 82px;
+}
+
+.crono-table .table-tabs .tabs:before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #F7F4EE;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.crono-table .table-tabs .tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    background-color: #C0B691;
+    will-change: left, right;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: #F7F4EE;
+    color: #74664D;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: #F7F4EE;
+    outline: none;
+}
+
+section.intermedio {
+    background: url(../image/banner-medio.png) #74664D;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 148px;
+}
+
+section.intermedio .content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding: 25px 0;
+}
+
+section.intermedio .content > .texto > p {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #F7F4EE;
+    margin: 0;
+}
+
+section.intermedio .content > .texto > h2 {
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #F7F4EE;
+    margin: 0;
+}
+
+section.intermedio .content .btn-cta a.texto {
+    border: 2px solid #F7F4EE;
+    padding: 24px 45px;
+    display: block;
+}
+
+section.intermedio .content .btn-cta a.texto p {
+    margin: 0;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #F7F4EE;
+}
+
+section.intermedio .content .btn-cta a.texto p strong {
+    font-family: ClanOT;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.agenda .logos {
+    background: #FFF;
+}
+
+inicio.css.agenda header {
+    background: url(../image/cabercera-internas.png) #C0B691;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+}
+
+.agenda header .content .top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+}
+
+.agenda header .content .top .language {
+    width: auto;
+}
+
+.agenda header .content .top .login a img {
+    vertical-align: bottom;
+    margin-right: 4px;
+}
+
+.agenda header .content {
+    align-items: center;
+}
+
+.agenda header .content .top .login a {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: normal;
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+.agenda header .content .top .login a strong {
+    font-weight: bold;
+}
+
+.agenda header .content .volver {
+    width: 100%;
+    display: block;
+    padding-top: 0;
+}
+
+.agenda header .content .volver a {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.015em;
+    color: #74664D;
+}
+
+.agenda header .content .logos,
+.agenda header .content .btn-cta {
+    width: 50%;
+}
+
+.agenda header .content .logos {
+    padding: 25px 0 44px;
+    padding-left: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.agenda header .content .logos h2 {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 31px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.agenda header .content .logos h3 {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 18px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+}
+
+.agenda header .content .btn-cta {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding-right: 122px;
+    margin-bottom: 55px;
+}
+
+.agenda header .content .btn-cta a.texto {
+    border: 2px solid #000000;
+    padding: 24px 45px;
+}
+
+.agenda header .content .btn-cta a.texto p {
+    margin: 0;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.agenda header .content .btn-cta a.live p img {
+    margin-right: 10px;
+}
+
+.agenda header .content .btn-cta a.live p {
+    margin: 0;
+    display: flex;
+    align-content: center;
+}
+
+.agenda header .content .btn-cta a.live {
+    background: #ED1C24;
+    border-radius: 3px;
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFf;
+    padding: 16px 47px;
+}
+
+.agenda header .content .btn-cta a.texto p strong {
+    font-family: ClanOT;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.table-content table {
+    width: 90%;
+    margin: 33px auto 60px;
+}
+
+.table-content table tbody tr {
+    border-bottom: 1px solid #C0B691;
+}
+
+.table-content table tbody tr:last-child {
+    border: none;
+}
+
+.table-content table tbody tr td {
+    padding: 27px 0;
+}
+
+.table-content table tbody tr td .evento {
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.table-content table tbody tr td .evento .horario {
+    margin-right: 15px;
+    min-width: 130px;
+}
+
+.table-content table tbody tr td .evento .horario span {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 120%;
+    color: #74664D;
+}
+
+.table-content table tbody tr td .evento .contenido p {
+    margin: 0;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+    color: #000000;
+}
+
+.table-content table tbody tr td .evento .contenido span {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+}
+
+.table-content table tbody tr td .evento .contenido span strong {
+    font-weight: bold;
+}
+
+.tabs .tab {
+    width: 100%;
+    margin: 0 auto;
+    height: 82px;
+    line-height: normal;
+}
+
+.tabs .tab a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-transition: color .28s ease, background-color .28s ease;
+    transition: color .28s ease, background-color .28s ease;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.crono-table .table-tabs .tabs {
+    position: relative;
+    height: 82px;
+    display: flex;
+}
+
+.crono-table .table-tabs .tabs:before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #F7F4EE;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.crono-table .table-tabs .tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    background-color: #C0B691;
+    will-change: left, right;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: #F7F4EE;
+    color: #74664D;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: #F7F4EE;
+    outline: none;
+}
+
+section.intermedio .content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+section.intermedio .content .btn-cta a.live p img {
+    margin-right: 10px;
+}
+
+section.intermedio .content .btn-cta a.live p {
+    margin: 0;
+    display: flex;
+    align-content: center;
+}
+
+section.intermedio .content .btn-cta a.live {
+    background: #ED1C24;
+    border-radius: 3px;
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFf;
+    padding: 16px 47px;
+    display: block;
+}
+
+section.intermedio .content > .texto > p {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #F7F4EE;
+    margin: 0;
+}
+
+section.intermedio .content > .texto > h2 {
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #F7F4EE;
+    margin: 0;
+}
+
+section.intermedio .content .btn-cta a.texto {
+    border: 2px solid #F7F4EE;
+    padding: 24px 45px;
+    display: block;
+}
+
+section.intermedio .content .btn-cta a.texto p {
+    margin: 0;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #F7F4EE;
+}
+
+section.intermedio .content .btn-cta a.texto p strong {
+    font-family: ClanOT;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.agenda .cronogramas {
+    background: #F7F4EE;
+}
+
+.agenda .logos {
+    background: #FFF;
+}
+
+div#suscribe .legales-content .legales-txt .content-legales::-webkit-scrollbar-track {
+    background: rgb(35, 31, 32, 0.2)
+}
+
+div#suscribe {
+    position: fixed;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div#suscribe .legales-content {
+    background: #fff;
+    box-shadow: 0px 9.61541px 19.2308px rgba(0, 0, 0, 0.25);
+    width: 600px;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    padding-left: 30px;
+}
+
+div#suscribe .legales-content a#close {
+    position: absolute;
+    right: 0;
+    top: -55px;
+}
+
+div#suscribe .legales-content .legales-txt {
+    color: var(--dorado-dos);
+}
+
+div#suscribe .legales-content .legales-txt h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+div#suscribe .legales-content .legales-txt p {
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #000000;
+    margin-top: 0;
+}
+
+div#suscribe .legales-content .legales-txt .content-legales {
+    max-height: 300px;
+    overflow: auto;
+    padding-right: 16px;
+    font-family: ClanOT-Book;
+    font-style: normal;
+}
+
+div#suscribe .legales-content .legales-txt .content-legales h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+div#suscribe .legales-content .legales-txt .content-legales ul {
+    list-style-type: circle;
+    padding-left: 25px;
+}
+
+div#suscribe .legales-content .legales-txt .content-legales ul:not(.browser-default) > li {
+    list-style-type: disc;
+}
+
+div#suscribe .legales-content .legales-txt .content-legales p a {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+div#suscribe .legales-content .legales-txt .content-legales p strong {
+    font-weight: bold;
+}
+
+/*Media Mobile*/
+@media screen and (max-width: 767px) {
+    div#suscribe .legales-content {
+        width: 90%;
+    }
+    .table-content table tbody tr td .evento .horario {
+        margin-right: 15px;
+        width: 60px;
+        min-width: 60px;
+    }
+    div#suscribe .legales-content a#close {
+        left: 86%;
+    }
+
+    .agenda header {
+        background: url(../image/m_cabercera-internas.png) #C0B691;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: cover;
+    }
+
+    .agenda header .content .top {
+        width: 90%;
+        justify-content: space-between;
+        margin: 0 auto;
+        order: 0;
+    }
+
+    .agenda header .content .logos, .agenda header .content .btn-cta {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .agenda header .content .logos {
+        order: 1;
+        padding-bottom: 25px;
+        padding-left: 0;
+    }
+
+    .agenda header .content .btn-cta {
+        order: 2;
+        padding: 0;
+        margin-bottom: 25px;
+    }
+
+    .agenda header .content .btn-cta a.texto {
+        border: 2px solid #000000;
+        padding: 15px 45px;
+        width: 100%;
+    }
+
+    .table-content table tbody tr td .evento .contenido p {
+        font-size: 16px;
+    }
+
+    .table-content table tbody tr td .evento .contenido span {
+        font-size: 14px;
+    }
+
+    section.intermedio .content {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        padding: 38px 0;
+    }
+
+    section.intermedio .content .texto {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    section.intermedio {
+        background: url(../image/m_banner-medio.png) #74664D;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: auto;
+    }
+
+    .cronogramas .content > p {
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+
+    .cronogramas .content .bloques {
+        margin-top: 30px;
+    }
+
+    .formularios .inicio > .content.agenda {
+        position: relative;
+        margin-bottom: 0;
+        padding: 0;
+        background: none;
+    }
+
+    .formularios.agenda .inicio > .content.agenda .crono-table .table-tabs .lista-dias .select-dias .select-wrapper .select-dropdown.dropdown-trigger {
+        padding: 12px;
+        box-sizing: border-box;
+        height: 67px;
+        font-family: ClanOT;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+        position: relative;
+        border-bottom: 0;
+    }
+
+    .select-wrapper input.select-dropdown:focus {
+        border-bottom: none;
+    }
+
+    .formularios.agenda .inicio > .content.agenda .crono-table .table-tabs .lista-dias {
+        width: 90%;
+        margin: 20px auto 0;
+        background: #C0B691;
+    }
+
+    .formularios.agenda .inicio > .content.agenda .crono-table .table-tabs .lista-dias .select-dias .select-wrapper:before {
+        position: absolute;
+        right: 13px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        z-index: 0;
+        content: "";
+        width: 19px;
+        height: 15px;
+        background: url(../image/select2.svg) no-repeat;
+        background-size: 100%;
+    }
+
+    .formularios.agenda .inicio > .content.agenda .crono-table .table-tabs .lista-dias .select-dias .select-dropdown.dropdown-content li.selected {
+        background-color: #74664D;
+    }
+
+    .formularios.agenda .inicio > .content.agenda .crono-table .table-tabs .lista-dias .select-dias .dropdown-content {
+        background-color: #C0B691;
+    }
+
+    .sa-success-fix {
+        display: none;
+    }
+}
+
+.table-content table tbody tr td .evento .contenido span b {
+    font-weight: bold;
+}

@@ -1,0 +1,168 @@
+﻿@using PROMPERU.PERUMODA.Web.Managers
+@using PROMPERU.PERUMODA.Web.Resources
+
+@{
+    ViewBag.Title = "Home";
+}
+
+@section Header
+{
+    <div class="top">
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="login">
+                <a href="@Url.Action("Login", "Usuario")">
+                    <img src="~/image/logout.svg" alt="@Global.Sign_In">
+                    @Global.Sign_In
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="login">
+                <a href="@Url.Action("Logout", "Usuario")">
+                    <img src="~/image/logout.svg" alt="">
+                    @Global.Greeting <strong>@Session["UsuarioNombre"]</strong>
+                </a>
+            </div>
+        }
+
+        <div class="language">
+            @{
+                foreach (Languages language in LanguageManager.AvailableLanguages)
+                {
+                    @Html.ActionLink(language.LanguageFullName, "ChangeLanguage", "Home", new {lang = language.LanguageCultureName}, new {@class = Html.Raw(Context.Request.Cookies["culture"]?.Value == language.LanguageCultureName ? "active" : "")})
+                }
+            }
+        </div>
+    </div>
+}
+
+<section class="banner">
+    <div class="content">
+        <div class="slider-image fade">
+            <div class="item">
+                <img class="logo-uno" src="~/image/perumoda_negro.svg" alt="Perú Moda">
+                <img class="personaje" src="~/image/banner-black.png" alt="">
+                <div class="info-evento">
+                    @if (Context.Request.Cookies["culture"]?.Value == "es-PE")
+                    {
+                        <h2>
+                            @Global.Forum <br>@Global.International
+                        </h2>
+                    }
+                    else
+                    {
+                        <h2>
+                            @Global.International <br>@Global.Forum
+                        </h2>
+                    }
+
+                    <p>@Global.Virtual_Edition</p>
+                    <div class="week">
+                        @if (Context.Request.Cookies["culture"]?.Value == "es-PE")
+                        {
+                            <p>01-30 <br><span>@Global.October</span></p>
+                        }
+                        else
+                        {
+                            <p><span>@Global.October</span><br>01-30</p>
+                        }
+                    </div>
+
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <a class="btn-cta" href="@Url.Action("Registro", "Usuario")">
+                            @Global.Sign_Up <img src="~/image/btn-sig.svg" alt="">
+                        </a>
+                    }
+
+                </div>
+            </div>
+            <div class="item">
+                <img class="logo-uno" src="~/image/perumoda_green.svg" alt="Perú Moda">
+                <img class="personaje" src="~/image/banner-green.png" alt="">
+                <div class="info-evento">
+                    <h2>@Global.Days_30 <br>@Global.Talks</h2>
+                    <p>@Global.Virtual_Edition</p>
+                    <div class="week">
+                        @if (Context.Request.Cookies["culture"]?.Value == "es-PE")
+                        {
+                            <p>01-30 <br><span>@Global.October</span></p>
+                        }
+                        else
+                        {
+                            <p><span>@Global.October</span><br>01-30</p>
+                        }
+                    </div>
+
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <a class="btn-cta" href="@Url.Action("Registro", "Usuario")">
+                            @Global.Sign_Up <img src="~/image/btn-sig.svg" alt="">
+                        </a>
+                    }
+
+                </div>
+            </div>
+        </div>
+        <div class="rrss-banner">
+            <img src="~/image/feel_live.png" alt="Feel & Live Sustainable">
+            <div class="media-links">
+                <a href="https://www.facebook.com/perumodatradeshow/" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/perumodaoficial?igshid=1hcgx5whq68wm" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/PeruMODA" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+        <div class="next">
+            <a id="next" href="javascript:void(0);">
+                <img src="~/image/down.svg" alt="">
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="inicio">
+    <div class="content agenda home">
+        <h2>@Global.Month <br><span>@Global.Dedicated</span></h2>
+        <p>@Global.Learn.</p>
+        <div class="logos-home">
+            <img src="~/image/peru-textiles.png" alt="Perú Textiles">
+            <img src="~/image/alpaca.png" alt="Alpaca">
+            <img src="~/image/peru-marca.png" alt="Perú">
+        </div>
+    </div>
+</section>
+
+<section class="intermedio">
+    <div class="content">
+        <div class="texto">
+            <p>@Global.Access</p>
+            <h2>@Global.Days</h2>
+        </div>
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="btn-cta">
+                <a href="@Url.Action("Registro", "Usuario")" class="texto">
+                    <p>
+                        <strong>@Global.Sign_Up</strong>
+                    </p>
+                </a>
+            </div>
+        }
+
+    </div>
+</section>
+
+<section class="cronogramas home">
+    @{
+        Html.RenderAction("Bloques");
+    }
+</section>

@@ -1,0 +1,85 @@
+﻿@using PROMPERU.PERUMODA.Web.Managers
+@using PROMPERU.PERUMODA.Web.Resources
+@model PROMPERU.PERUMODA.BE.UsuarioBE
+
+@section Header
+{
+    <div class="volver">
+        <a href="@Url.Action("Index", "Home")">
+            <img src="~/image/btn-back.svg" alt=""> @Global.Back
+        </a>
+    </div>
+
+    <div class="logos">
+        <img src="~/image/perumoda_green.svg" alt="Perú Moda Deco">
+        <img src="~/image/feel_live.svg" alt="Feel & Live Sustaintable">
+    </div>
+
+    <div class="language">
+        @{
+            foreach (Languages language in LanguageManager.AvailableLanguages)
+            {
+                @Html.ActionLink(language.LanguageFullName, "ChangeLanguage", "Home", new {lang = language.LanguageCultureName}, new {@class = Html.Raw(Context.Request.Cookies["culture"]?.Value == language.LanguageCultureName ? "active" : "")})
+            }
+        }
+    </div>
+}
+
+<section class="inicio">
+    <div class="content login">
+        <img src="~/image/cuerpo-login.png" alt="Perú Moda">
+        <div class="form registro">
+            <div class="content">
+                <div class="form-participa inner">
+                    @using (Html.BeginForm("Login", "Usuario", null, FormMethod.Post, new {id = "login", @class = "form-register"}))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="header-form">
+                            <h3>@Global.Sign_In</h3>
+                        </div>
+                        <div class="campos">
+                            <div class="form-row form-email form-row-half">
+                                <div class="form-holder form-holder-2">
+                                    <label class="form-row-inner">
+                                        @Html.LabelFor(m => m.UsuarioCorreoElectronico, $"{Global.Form_Email}*", new {@class = "label"})
+                                        @Html.TextBoxFor(m => m.UsuarioCorreoElectronico, new {id = "txtCorreoElectronico", @class = "form-control email", onblur = "verifEmail(this)", onkeyup = "verifEmail(this); ocultarErrores()", required = "required"})
+                                        @Html.ValidationMessageFor(m => m.UsuarioCorreoElectronico, "", new {id = "lbEmail", @class = "error", style = "display: none;"})
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row form-row-half">
+                                <div class="form-holder form-holder-2 form-holder-half">
+                                    <label class="form-row-inner">
+                                        @Html.LabelFor(m => m.UsuarioNumeroDocumento, $"{Global.Form_Document_Number}*", new {@class = "label"})
+                                        @Html.TextBoxFor(m => m.UsuarioNumeroDocumento, new {id = "txtNumeroDocumento", @class = "form-control dni", onblur = "verifDNI(this)", onkeyup = "verifDNI(this); ocultarErrores()", required = "required"})
+                                        @foreach (ModelState state in ViewData.ModelState.Values)
+                                        {
+                                            foreach (ModelError  error in state.Errors)
+                                            {
+                                                @Html.ValidationMessageFor(m => m.UsuarioNumeroDocumento, error.ErrorMessage, new {id = "lbDNI", @class = "error"})
+                                            }
+                                        }
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-row form-row-btn">
+                                <div class="form-holder form-holder-2">
+                                    <button type="submit" id="btnIngresar" class="enviar">
+                                        <span>@Global.Sign_In</span>
+                                        <img src="~/image/btn-sig.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="otro-form">
+                        <p>@Global.Not_Registered, <br><a href="@Url.Action("Registro", "Usuario")">@Global.Sign_Up</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

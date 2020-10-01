@@ -1,0 +1,940 @@
+.formularios header {
+    background: url(../image/cabercera-form.png) var(--marron-claro);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+}
+.formularios header .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-between;
+}
+.formularios header .content .volver, 
+.formularios header .content .language {
+    width: 20%;
+}
+
+.formularios header .content .logos {
+    width: 60%;
+    padding-top: 65px;
+    padding-bottom: 44px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    background: transparent;
+}
+
+.formularios header .content .logos img:first-child {
+    margin-right: 30px;
+}
+
+.formularios header .content .volver {
+    padding-top: 62px;
+    padding-left: 80px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.formularios header .content .language {
+    padding: 24px;
+    text-align: right;
+}
+.formularios header .content .language a {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: normal;
+    text-align: right;
+    text-transform: uppercase;
+    color: #000000;
+    margin-left: 20px;
+    transition: all .3s ease;
+    position: relative;
+}
+.formularios header .content .language a:last-child:before {
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: #000;
+}
+.formularios header .content .language a.active,
+.formularios header .content .language a:hover {
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: bold;
+}
+.formularios .inicio > .content {
+    position: relative;
+    margin-bottom: -23px;
+}
+
+.formularios .inicio > .content > img {
+    width: 100%;
+    position: relative;
+    top: -23px;
+}
+
+.formularios .inicio > .content .form {
+    position: absolute;
+    top: 63px;
+    left: 50%;
+    width: 100%;
+    max-width: 730px;
+    transform: translateX(-50%);
+}
+.formularios .inicio > .content .form form .header-form {
+    text-align: center;
+    width: 100%;
+}
+
+.formularios .inicio > .content .form form .header-form h3 {
+    margin: 0;
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 120%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #74664D;
+    margin-bottom: 25px;
+}
+
+.formularios .inicio > .content .form form .header-form p {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 140%;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 35px;
+}
+
+.form-participa.inner form .campos {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+.form-participa.inner form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-between;
+}
+.inner .form-row.form-row-formas {
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.inner .form-row.form-row-formas .form-holder.form-holder-2.flex {
+    width: 30%;
+}
+.inner .form-row {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+.inner .form-row.form-row-seminarios {
+    flex-direction: column;
+}
+.inner .form-row.form-row-seminarios span.checkbox-custom-span {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 38px;
+    color: #000000;
+}
+.inner .form-row.form-row-seminarios > p {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.02em;
+    color: #74664D;
+}
+.inner .form-row.form-row-seminarios .form-holder,
+.inner .form-row.form-row-tyc .form-holder {
+    margin-bottom: 10px;
+}
+.inner .form-row.form-row-tyc {
+    flex-direction: column;
+    margin-top: 25px;
+}
+.inner .form-row.form-row-tyc .checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "";
+    background: url(../image/check2.png) #74664D;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.inner .form-row.form-row-tyc span.checkbox-custom-span, .inner .form-row.form-row-tyc span.checkbox-custom-span a {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.015em;
+    color: #524735;
+}
+.inner .form-row.form-row-tyc span.checkbox-custom-span a {
+    text-decoration: underline!important;
+}
+.inner .form-row.form-row-half {
+    width: 48%;
+}
+.inner .form-row.form-row-half.documentos {
+    display: flex;
+    justify-content: space-between;
+}
+.inner .form-row .form-holder {
+    width: 50%;
+    padding: 0;
+    margin-bottom: 35px;
+    position: relative;
+}
+.inner .form-row .form-holder.form-holder-1 {
+    width: 84.1%;
+}
+.inner .form-row .form-holder.form-holder-2 {
+    width: 100%;
+    position: relative;
+}
+.inner .form-row .form-row-inner {
+    position: relative;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.inner .form-row .form-holder .label {
+    padding: 0 5px;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    z-index: 1;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.02em;
+    color: #74664D;
+}
+.inner .form-row .form-holder .border {
+    position: absolute;
+    bottom: 31px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #6bc734;
+    transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: all .15s ease;
+    -webkit-transition: all .15s ease;
+    -moz-transition: all .15s ease;
+    -o-transition: all .15s ease;
+    -ms-transition: all .15s ease;
+}
+.inner .form-row #radio {
+    color: #666;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 8px 12px;
+}
+.inner .form-row #checkbox {
+    margin: 10px 0 28px 11px;
+    font-size: 15px;
+    color: #666;
+    font-weight: 400;
+}
+.inner .form-row .form-holder label.special-label {
+    display: inline-block;
+    float: left;
+    margin-top: 25px;
+    padding-right: 20px;
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+}
+.inner .form-row .form-holder label.pay-1-label,
+.inner .form-row .form-holder label.pay-2-label {
+    width: 190px;
+    height: 95px;
+    border:  1px solid #e5e5e5;
+    display: block;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 15px;
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.inner .form-row .form-holder label.pay-1-label img,
+.inner .form-row .form-holder label.pay-2-label img {
+    padding-top: 15px;
+    padding-bottom: 8px;
+}
+.inner .form-row.form-row-date .form-holder select {
+    font-family: 'CamphorPro-light';
+    width: 100%;
+    padding-top: 20px;
+    height: 55px;
+    line-height: normal;
+}
+.inner .form-row .form-holder ul li {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    font-size: 12px;
+    color: #74664d;
+}
+.select-wrapper:before {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    z-index: 0;
+    content: "";
+    width: 16px;
+    height: 20px;
+    background: url(../image/select.svg) no-repeat;
+}
+.select-wrapper .caret {
+    display: none;
+}
+.dropdown-content li>a, .dropdown-content li>span {
+    display: block;
+    padding: 14px 16px;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.inner .form-row .form-holder ul {
+    padding: 0;
+    background: #C0B691;
+}
+
+.inner .form-row .form-holder ul li a {
+    color: #FFF;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.inner .form-row .form-holder ul li:first-child a {
+    text-decoration: underline;
+}
+.inner .form-row .form-holder input,
+.inner .form-row .form-holder select,
+.inner .form-row .form-holder .enviar {
+    width: 100%;
+    padding: 21px 5px 8px;
+    border: none;
+    border-bottom: 0.75px solid rgb(35, 31, 32, 0.3);
+    appearance: unset;
+    -moz-appearance: unset;
+    -webkit-appearance: unset;
+    -o-appearance: unset;
+    -ms-appearance: unset;
+    outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+    -o-outline: none;
+    -ms-outline: none;
+    font-weight: 400;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+.inner .form-row .form-holder input, .inner .form-row .form-holder .enviar {
+    width: 100%;
+    height: 30px;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 0 5px;
+    border-radius: 0;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+.inner .form-row .form-holder .enviar {
+    padding: 0;
+    display: block;
+    width: 250px;
+    height: 55px;
+    margin: 0 auto;
+    transition: all .3s ease;
+    line-height: 55px;
+    text-align: center;
+    border: 0;
+    background: #74664D;
+    border-radius: 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.inner .form-row.form-row-btn .form-holder.form-holder-2 {
+    margin: 45px auto;
+}
+.inner .form-row .form-holder .enviar img {
+    margin-left: 11px;
+    margin-bottom: -2px;
+}
+.inner .form-row .form-holder .enviar:hover {
+    text-decoration: none;
+    box-shadow: 0px 2px 8px rgba(68, 68, 68, 0.7);
+}
+.inner .form-row .form-holder input#tyc {
+    width: 25%;
+    padding: 0;
+    height: 22px;
+    margin: 0;
+    z-index: 9;
+}
+.inner .form-row .form-holder input#pay-1,
+.inner .form-row .form-holder input#pay-2 {
+    display: none;
+}
+.inner .form-row .form-holder select {
+    background: #fff url(../img/select.png) no-repeat scroll;
+    background-position: right 5px top 27px;
+    background-size: 11px auto;
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 23px;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 0 5px;
+    border-radius: 0;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.015em;
+    color: #231F20;
+}
+.inner .form-row .form-holder select:focus,
+.inner .form-row .form-holder select:valid  {
+    border-bottom: 0.75px solid rgb(35, 31, 32, 0.3);
+    box-shadow: none;
+}
+
+.inner .form-row .form-holder .form-control:focus, 
+.inner .form-row .form-holder .form-control:valid {
+    border-bottom: 0.75px solid rgb(35, 31, 32, 0.3);
+    box-shadow: none;
+}
+
+.form-control:focus {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.inner .form-row  .form-holder .form-control:focus  + .border, 
+.inner .form-row  .form-holder .form-control:valid  + .border {
+    transform: scaleX(1);
+    -o-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+}
+.inner .form-row  .form-holder input#pay-1:checked + label,
+.inner .form-row  .form-holder input#pay-2:checked + label {
+    border:  none;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.checkbox-custom {
+    opacity: 0;
+    position: absolute;
+    z-index: 9;
+}
+
+.checkbox-custom, .checkbox-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.checkbox-custom-label {
+    position: relative;
+    color: #FFFFFF;
+    width: 22px;
+    outline: none;
+    margin: 0 auto;
+    margin-right: 4px;
+}
+
+.checkbox-custom + .checkbox-custom-label:before {
+    content: '';
+    background: transparent;
+    border: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 0;
+    border: 2px solid #74664D;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "";
+    background: url(../image/check.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.checkbox-custom:focus + .checkbox-custom-label {
+  outline: 1px solid #ddd; /* focus style */
+}
+
+.formularios .logos {
+    background: #F7F4EE;
+}
+.formularios .inicio > .content.login > img {
+    top: -15px;
+}
+.formularios .inicio > .content.login {
+    margin-bottom: -20px;
+}
+.formularios .inicio > .content.login .form {
+    max-width: 320px;
+}
+.formularios .inicio > .content.login .form form .campos {
+    flex-direction: column;
+}
+.formularios .inicio > .content.login .form form .campos .form-row.form-row-half {
+    width: 100%;
+}
+.formularios .inicio > .content.login .form .header-form h3 {
+    margin-bottom: 35px;
+}
+.formularios .inicio > .content.registro .inner .form-row.form-row-btn .form-holder.form-holder-2 {
+    margin-bottom: 20px;
+}
+.formularios .inicio > .content.login .otro-form, .formularios .inicio > .content.registro .otro-form {
+    padding: 18px;
+    text-align: center;
+    background: #F7F4EE;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.formularios .inicio > .content.login .otro-form p, .formularios .inicio > .content.registro .otro-form p {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14.4231px;
+    line-height: 145%;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.formularios .inicio > .content.login .otro-form p a, .formularios .inicio > .content.registro .otro-form p a {
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14.4231px;
+    line-height: 145%;
+    text-align: center;
+    color: #74664D;
+}
+.formularios .inicio > .content.login .form.gracias {
+    max-width: 600px;
+    text-align: center;
+}
+.formularios .inicio > .content.login .form.gracias .content-gracias h2 {
+    font-family: ClanOT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 120%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #74664D;
+}
+
+.formularios .inicio > .content.login .form.gracias .content-gracias p {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    color: #000000;
+}
+
+.formularios .inicio > .content.login .form.gracias .content-gracias p strong {
+    font-weight: bold;
+}
+div.tlegales .legales-content .legales-txt .content-legales::-webkit-scrollbar-track {
+    background: rgb(35, 31, 32, 0.2)
+}
+div.tlegales {
+    position: fixed;
+    z-index: 99999;
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+div.tlegales .legales-content {
+    background: #F0F0F0;
+    box-shadow: 0px 9.61541px 19.2308px rgba(0, 0, 0, 0.25);
+    width: 600px;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    padding-left: 30px;
+}
+div.tlegales .legales-content a#close {
+    position: relative;
+    margin-right: 0;
+    display: block;
+    width: 42px;
+    margin-left: auto;
+}
+div.tlegales .legales-content .legales-txt {
+    color: var(--dorado-dos);
+}
+div.tlegales .legales-content .legales-txt h2 {
+    margin: 0;
+    font-size: 25px;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+div.tlegales .legales-content .legales-txt .content-legales {
+    max-height: 300px;
+    overflow: auto;
+    padding-right: 16px;
+    font-family: ClanOT-Book;
+    font-style: normal;
+}
+div.tlegales .legales-content .legales-txt .content-legales h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+div.tlegales .legales-content .legales-txt .content-legales ul {
+    list-style-type: circle;
+    padding-left: 25px;
+}
+div.tlegales .legales-content .legales-txt .content-legales ul:not(.browser-default)>li {
+    list-style-type: disc;
+}
+div.tlegales .legales-content .legales-txt .content-legales p a {
+    font-weight: bold;
+    text-decoration: underline!important;
+    color: #5a503f;
+}
+div.tlegales .legales-content .legales-txt .content-legales p strong {
+    font-weight: bold;
+}
+.formularios .inicio > .content.registro .inner .form-row .form-holder input {
+    padding-right: 20px;
+    border-bottom: 0.75px solid rgb(35, 31, 32, 0.3);
+}
+.formularios .inicio > .content.registro .inner .form-row .form-holder input {
+    padding-right: 20px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*max-width: 324px;*/
+}
+.error {
+    position: absolute;
+    top: 47px;
+    background: #ED1C24;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    right: 0;
+}
+
+.error:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-right: 7px solid transparent;
+    border-top: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-bottom: 7px solid #ED1C24;
+    position: absolute;
+    top: -12px;
+    right: 3px;
+    z-index: 1;
+}
+.error:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -27px;
+    right: 0;
+    background: #FFF url(../image/alerta.png);
+    background-size: 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*Media Mobile*/
+@media screen and (max-width: 767px) {
+    .formularios header {
+        background: url(../image/m_cabercera-form.png) var(--marron-claro);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .formularios .inicio > .content.registro .inner .form-row .form-holder input {
+        max-width: 324px;
+    }
+    .formularios header .content .volver, 
+    .formularios header .content .language {
+        width: 50%;
+    }
+    .formularios header .content .volver {
+        padding-top: 16px;
+        padding-left: 19px;
+        order: 0;
+    }
+    .formularios header .content .language {
+        padding: 16px 19px;
+        text-align: right;
+        order: 1;
+    }
+    .formularios header .content .logos {
+        width: 100%;
+        padding: 40px 18px;
+        order: 2;
+        justify-content: space-between;
+    }
+    .formularios header .content .logos img:last-child {
+        max-width: 80px;
+    }
+    .formularios header .content .logos img:first-child {
+        margin-right: 0;
+        max-width: 210px;
+    }
+    .formularios.agenda header .content .logos img:last-child {
+        max-width: 80%;
+    }
+    .formularios .inicio > .content > img {
+        display: none;
+    }
+    .inner .form-row.form-row-half {
+        width: 100%;
+    }
+    .inner .form-row-seminarios .form-holder.form-holder-2, 
+    .inner .form-row-tyc .form-holder.form-holder-2 {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    .checkbox-custom-label {
+        margin-left: 0;
+    }
+    .inner .form-row.form-row-tyc {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+    .inner .form-row.form-row-btn .form-holder.form-holder-2 {
+        margin: 35px auto 0;
+        width: 100%;
+    }
+    .inner .form-row .form-holder .enviar {
+        width: 85%;
+    }
+    .inner .form-row.form-row-seminarios span.checkbox-custom-span {
+        font-size: 17px;
+        line-height: normal;
+    }
+    .formularios .inicio > .content .form {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 90%;
+        max-width: 730px;
+        transform: none;
+        margin: 0px auto;
+    }
+    .formularios .inicio > .content {
+        position: relative;
+        margin-bottom: 0;
+        padding: 47px 0 170px;
+    }
+    .formularios .inicio > .content.registro {
+        background: url(../image/m_registro.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .formularios .inicio > .content.login .otro-form {
+        margin-top: 45px;
+    }
+    .formularios .inicio > .content.login {
+        background: url(../image/m_cuerpo-login.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin-bottom: -5px;
+    }
+    .form-participa.inner form .campos {
+        padding: 0;
+    }
+    .inner .form-row.form-row-half.documentos .form-row.form-row-half {
+        width: 48%;
+    }
+    .checkbox-custom + .checkbox-custom-label:before {
+        border: 1px solid #74664D;
+    }
+    .formularios .inicio > .content.login.gracias {
+        background: url(../image/gracias_m.png);
+        background-repeat: no-repeat;
+        background-size: 95% 100%;
+        margin-bottom: 0;
+    }
+    .formularios .inicio > .content.login .form.gracias .content-gracias h2 {
+        margin-top: 0;
+    }
+    div.tlegales .legales-content {
+        width: 90%;
+    }
+    .formularios .inicio > .content.registro .inner .form-row.form-row-btn .form-holder.form-holder-2 {
+        margin-bottom: 35px;
+    }
+}
+
+/*Media Large*/
+@media screen and (min-width: 1699px) {
+    .formularios .inicio > .content > img {
+        top: -33px;
+    }
+    .formularios .inicio > .content {
+        position: relative;
+        margin-bottom: -38px;
+    }
+    .formularios .inicio > .content .form form .header-form h3 {
+        font-size: 34px;
+        line-height: 125%;
+    }
+    .formularios .inicio > .content .form form .header-form p {
+        font-size: 20px;
+    }
+    .inner .form-row .form-holder .label {
+        font-size: 14px;
+    }
+    .formularios .inicio > .content .form {
+        max-width: 760px;
+    }
+    .inner .form-row .form-holder input {
+        height: 30px;
+        line-height: 30px;
+    }
+    .inner .form-row.form-row-seminarios > p {
+        font-size: 16px;
+    }
+    .formularios .inicio > .content .form {
+        top: 130px;
+    }
+    .formularios .inicio > .content.login > img {
+        top: -20px;
+    }
+    .formularios .inicio > .content.login {
+        margin-bottom: -25px;
+    }
+    .formularios header {
+        background: url(../image/cabercera-form.png) var(--marron-claro);
+        background-repeat: no-repeat;
+        background-position: right;
+        height: 230px;
+    }
+    .formularios header .content .logos {
+        padding-top: 44px;
+        padding-bottom: 34px;
+        align-items: flex-end;
+        background: transparent;
+    }
+    .formularios header .content .volver {
+        padding-top: 44px;
+    }
+
+}

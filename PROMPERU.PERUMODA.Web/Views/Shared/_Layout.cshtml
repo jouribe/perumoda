@@ -1,0 +1,90 @@
+﻿@using PROMPERU.PERUMODA.Web.Managers
+@using PROMPERU.PERUMODA.Web.Resources
+
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="shortcut icon" href="~/image/icon.ico" />
+
+    <title>@Global.APP_NAME</title>
+    <meta name="description" content="No te pierdas el primer foro virtual del 01 al 30 de octubre." />
+
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Foro PerúModa&Deco 2020" />
+    <meta property="og:description" content="No te pierdas el primer foro virtual del 01 al 30 de octubre." />
+    <meta property="og:url" content="https://www.perumoda.com/foro2020" />
+    <meta property="og:site_name" content="Foro PerúModa&Deco 2020" />
+    <!-- <meta property="og:image" content="~/image/share.jpg"> -->
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="No te pierdas el primer foro virtual del 01 al 30 de octubre." />
+    <meta name="twitter:title" content="Foro PerúModa&Deco 2020" />
+    <meta name="twitter:site" content="https://www.perumoda.com/foro2020" />
+    <!-- <meta name="twitter:image" content="~/image/share.jpg" /> -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG6W7FG');</script>
+    <!-- End Google Tag Manager -->
+
+</head>
+<body class="formularios @ViewBag.Style">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG6W7FG"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <header>
+        <div class="content">
+            @RenderSection("Header", false)
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+
+        @Html.Partial("_Logos")
+    </main>
+
+    <footer>
+        <div class="content">
+            <div class="copyright">
+                <p>&copy; Copyright 2020. PROMPERÚ Todos los Derechos Reservados.</p>
+            </div>
+            <div class="rrss">
+                <a href="https://www.facebook.com/perumodatradeshow/" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/perumodaoficial?igshid=1hcgx5whq68wm" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/PeruMODA" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/js")
+    @RenderSection("scripts", false)
+
+</body>
+</html>
