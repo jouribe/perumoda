@@ -32,6 +32,10 @@ function ocultarErrores() {
     $("#lbTYC").hide();
     $("#lbTipoDoc").hide();
     $("#lbContacto").hide();
+    $("#lbPais").hide();
+    $("#lbRegion").hide();
+    $("#lbBloques").hide();
+    $("#lbGrupo").hide();
 }
 
 function verifL(n) {

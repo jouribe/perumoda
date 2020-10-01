@@ -109,7 +109,7 @@ $(function () {
             mostrarError("lbDNI", "Ingresa un número de documento válido.");
             return false;
         } else if (pais === "") {
-            mostrarError("lblbPais", "Seleccione su país");
+            mostrarError("lbPais", "Seleccione su país");
             return false;
         } else if (region.length === 0) {
             mostrarError("lbRegion", "Ingrese su región")

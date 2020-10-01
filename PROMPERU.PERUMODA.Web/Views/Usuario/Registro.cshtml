@@ -120,7 +120,7 @@
                                 <div class="form-holder form-holder-2 form-holder-half form-select">
                                     <label class="form-row-inner">
                                         @Html.LabelFor(m => m.Region, $"{Global.Form_Region}*", new {@class = "label"})
-                                        @Html.TextBoxFor(m => m.Region, new {id = "txtRegion", @class = "form-control celular", maxlength = "120", required = "required"})
+                                        @Html.TextBoxFor(m => m.Region, new {id = "txtRegion", @class = "form-control celular", maxlength = "120", onkeyup = "ocultarErrores()", required = "required"})
                                         @Html.ValidationMessageFor(m => m.Region, "", new {@class = "error", id = "lbRegion", style="display: none;"})
                                     </label>
                                 </div>
