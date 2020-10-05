@@ -1,183 +1,285 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <root>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:element name="root" msdata:IsDataSet="true">
-            
-        </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
-        <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
-        <value>1.3</value>
-    </resheader>
-    <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <data name="APP_NAME" xml:space="preserve">
-        <value>PerúModa</value>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
     </data>
-    <data name="Sign_In" xml:space="preserve">
-        <value>Ingresa</value>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
     </data>
-    <data name="Sign_Up" xml:space="preserve">
-        <value>Regístrate aquí</value>
-    </data>
-    <data name="Access" xml:space="preserve">
-        <value>Regístrate y accede a</value>
-    </data>
-    <data name="Days" xml:space="preserve">
-        <value>30 días de ponencia de moda y deco</value>
-    </data>
-    <data name="Schedule" xml:space="preserve">
-        <value>Cronogramas</value>
-    </data>
-    <data name="Know" xml:space="preserve">
-        <value>Conoce el detalle de las más de 60 ponencias que tenemos para ti</value>
-    </data>
-    <data name="Organize" xml:space="preserve">
-        <value>Organiza</value>
-    </data>
-    <data name="Subscribe" xml:space="preserve">
-        <value>Suscríbete para acceder al foro</value>
-    </data>
-    <data name="Back" xml:space="preserve">
-        <value>Regresar</value>
-    </data>
-    <data name="Greeting" xml:space="preserve">
-        <value>Hola</value>
-    </data>
-    <data name="Not_Registered" xml:space="preserve">
-        <value>Si aún no te has registrado</value>
-    </data>
-    <data name="Subscribe_Here" xml:space="preserve">
-        <value>suscríbete aquí</value>
-    </data>
-    <data name="Access_Forum" xml:space="preserve">
-        <value>accede a este foro</value>
-    </data>
-    <data name="Soon" xml:space="preserve">
-        <value>pronto podrás ingresar</value>
-    </data>
-    <data name="Live_Stream" xml:space="preserve">
-        <value>ver transmisión en vivo</value>
-    </data>
-    <data name="Access_Now" xml:space="preserve">
-        <value>Ya puedes acceder a la transmisión en vivo</value>
-    </data>
-    <data name="Subscribe_Successful" xml:space="preserve">
-        <value>¡suscripción exitosa!</value>
-    </data>
-    <data name="Sign_Up_Title" xml:space="preserve">
-        <value>Regístrate</value>
-    </data>
-    <data name="Access_Sign_Up" xml:space="preserve">
-        <value>Regístrate y accede a los ponencias en vivo de Perú Moda &amp; Moda Deco</value>
-    </data>
-    <data name="Form_First_Name" xml:space="preserve">
-        <value>Nombres</value>
-    </data>
-    <data name="Form_Last_Name" xml:space="preserve">
-        <value>Apellidos</value>
-    </data>
-    <data name="Form_Email" xml:space="preserve">
-        <value>Correo Electrónico</value>
-    </data>
-    <data name="Form_Document_Number" xml:space="preserve">
-        <value>Número de documento</value>
-    </data>
-    <data name="Form_Document_Type" xml:space="preserve">
-        <value>Tipo de documento</value>
-    </data>
-    <data name="Form_Contact_Phone" xml:space="preserve">
-        <value>Teléfono de Contacto</value>
-    </data>
-    <data name="Form_Social" xml:space="preserve">
-        <value>Razón Social</value>
-    </data>
-    <data name="Form_Mandatory" xml:space="preserve">
-        <value>campo no obligatorio</value>
-    </data>
-    <data name="Form_Country" xml:space="preserve">
-        <value>País</value>
-    </data>
-    <data name="Form_Region" xml:space="preserve">
-        <value>Región</value>
-    </data>
-    <data name="Form_User_Type" xml:space="preserve">
-        <value>Elige la opción con la que te identificas</value>
-    </data>
-    <data name="Form_Select_Country" xml:space="preserve">
-        <value>Selecciona un país</value>
-    </data>
-    <data name="Form_Select" xml:space="preserve">
-        <value>Seleccione</value>
-    </data>
-    <data name="Form_Select_Option" xml:space="preserve">
-        <value>Seleccione una opción</value>
-    </data>
-    <data name="Form_Select_Forums" xml:space="preserve">
-        <value>Escoge los bloques de seminarios del que quieres ser parte, puedes marcar más de una opción</value>
-    </data>
-    <data name="Form_Authorize_1" xml:space="preserve">
-        <value>Autorizo a</value>
-    </data>
-    <data name="Form_Authorize_2" xml:space="preserve">
-        <value>poder compartir los datos recabados con terceros, según estime conveniente</value>
-    </data>
-    <data name="Form_Privacy" xml:space="preserve">
-        <value>Términos y Condiciones</value>
-    </data>
-    <data name="Form_Privacy_Accept" xml:space="preserve">
-        <value>Acepto los</value>
-    </data>
-    <data name="Sign_Up_Already" xml:space="preserve">
-        <value>Si ya te registraste</value>
-    </data>
-    <data name="Live_Stream_Soon" xml:space="preserve">
-        <value>a la transmisión en vivo</value>
-    </data>
-    <data name="Virtual_Edition" xml:space="preserve">
-        <value>Edición Virtual</value>
-    </data>
-    <data name="October" xml:space="preserve">
-        <value>octubre</value>
-    </data>
-    <data name="Forum" xml:space="preserve">
-        <value>Foro</value>
-    </data>
-    <data name="International" xml:space="preserve">
-        <value>Internacional</value>
-    </data>
-    <data name="Days_30" xml:space="preserve">
-        <value>30 días de</value>
-    </data>
-    <data name="Talks" xml:space="preserve">
-        <value>ponencias</value>
-    </data>
-    <data name="Month" xml:space="preserve">
-        <value>un mes de foros</value>
-    </data>
-    <data name="Dedicated" xml:space="preserve">
-        <value>dedicado a moda y deco</value>
-    </data>
-    <data name="Learn" xml:space="preserve">
-        <value>Conoce las tendencias sostenibles que se están desarrollando a nivel mundial y su impacto estratégico en la oferta comercial exportable; teniendo como eje los grandes cambios del consumo debido a la pandemia</value>
-    </data>
-    <data name="Co_Organizer" xml:space="preserve">
-        <value>Coorganizadores</value>
-    </data>
-    <data name="Sponsors" xml:space="preserve">
-        <value>Auspiciadores</value>
-    </data>
-    <data name="Access_To" xml:space="preserve">
-        <value>acceder al foro</value>
-    </data>
-    <data name="Sign_Up_Title_To" xml:space="preserve">
-        <value>Regístrate para</value>
-    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="APP_NAME" xml:space="preserve">
+    <value>PerúModa</value>
+  </data>
+  <data name="Sign_In" xml:space="preserve">
+    <value>Ingresa</value>
+  </data>
+  <data name="Sign_Up" xml:space="preserve">
+    <value>Regístrate aquí</value>
+  </data>
+  <data name="Access" xml:space="preserve">
+    <value>Regístrate y accede a</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>30 días de ponencia de moda y deco</value>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>Cronogramas</value>
+  </data>
+  <data name="Know" xml:space="preserve">
+    <value>Conoce el detalle de las más de 60 ponencias que tenemos para ti</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>Organiza</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>Suscríbete para acceder al foro</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Regresar</value>
+  </data>
+  <data name="Greeting" xml:space="preserve">
+    <value>Hola</value>
+  </data>
+  <data name="Not_Registered" xml:space="preserve">
+    <value>Si aún no te has registrado</value>
+  </data>
+  <data name="Subscribe_Here" xml:space="preserve">
+    <value>suscríbete aquí</value>
+  </data>
+  <data name="Access_Forum" xml:space="preserve">
+    <value>accede a este foro</value>
+  </data>
+  <data name="Soon" xml:space="preserve">
+    <value>pronto podrás ingresar</value>
+  </data>
+  <data name="Live_Stream" xml:space="preserve">
+    <value>ver transmisión en vivo</value>
+  </data>
+  <data name="Access_Now" xml:space="preserve">
+    <value>Ya puedes acceder a la transmisión en vivo</value>
+  </data>
+  <data name="Subscribe_Successful" xml:space="preserve">
+    <value>¡suscripción exitosa!</value>
+  </data>
+  <data name="Sign_Up_Title" xml:space="preserve">
+    <value>Regístrate</value>
+  </data>
+  <data name="Access_Sign_Up" xml:space="preserve">
+    <value>Regístrate y accede a los ponencias en vivo de Perú Moda &amp; Moda Deco</value>
+  </data>
+  <data name="Form_First_Name" xml:space="preserve">
+    <value>Nombres</value>
+  </data>
+  <data name="Form_Last_Name" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
+  <data name="Form_Email" xml:space="preserve">
+    <value>Correo Electrónico</value>
+  </data>
+  <data name="Form_Document_Number" xml:space="preserve">
+    <value>Número de documento</value>
+  </data>
+  <data name="Form_Document_Type" xml:space="preserve">
+    <value>Tipo de documento</value>
+  </data>
+  <data name="Form_Contact_Phone" xml:space="preserve">
+    <value>Teléfono de Contacto</value>
+  </data>
+  <data name="Form_Social" xml:space="preserve">
+    <value>Razón Social</value>
+  </data>
+  <data name="Form_Mandatory" xml:space="preserve">
+    <value>campo no obligatorio</value>
+  </data>
+  <data name="Form_Country" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="Form_Region" xml:space="preserve">
+    <value>Región</value>
+  </data>
+  <data name="Form_User_Type" xml:space="preserve">
+    <value>Elige la opción con la que te identificas</value>
+  </data>
+  <data name="Form_Select_Country" xml:space="preserve">
+    <value>Selecciona un país</value>
+  </data>
+  <data name="Form_Select" xml:space="preserve">
+    <value>Seleccione</value>
+  </data>
+  <data name="Form_Select_Option" xml:space="preserve">
+    <value>Seleccione una opción</value>
+  </data>
+  <data name="Form_Select_Forums" xml:space="preserve">
+    <value>Escoge los bloques de seminarios del que quieres ser parte, puedes marcar más de una opción</value>
+  </data>
+  <data name="Form_Authorize_1" xml:space="preserve">
+    <value>Autorizo a</value>
+  </data>
+  <data name="Form_Authorize_2" xml:space="preserve">
+    <value>poder compartir los datos recabados con terceros, según estime conveniente</value>
+  </data>
+  <data name="Form_Privacy" xml:space="preserve">
+    <value>Términos y Condiciones</value>
+  </data>
+  <data name="Form_Privacy_Accept" xml:space="preserve">
+    <value>Acepto los</value>
+  </data>
+  <data name="Sign_Up_Already" xml:space="preserve">
+    <value>Si ya te registraste</value>
+  </data>
+  <data name="Live_Stream_Soon" xml:space="preserve">
+    <value>a la transmisión en vivo</value>
+  </data>
+  <data name="Virtual_Edition" xml:space="preserve">
+    <value>Edición Virtual</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>octubre</value>
+  </data>
+  <data name="Forum" xml:space="preserve">
+    <value>Foro</value>
+  </data>
+  <data name="International" xml:space="preserve">
+    <value>Internacional</value>
+  </data>
+  <data name="Days_30" xml:space="preserve">
+    <value>30 días de</value>
+  </data>
+  <data name="Talks" xml:space="preserve">
+    <value>ponencias</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>un mes de foros</value>
+  </data>
+  <data name="Dedicated" xml:space="preserve">
+    <value>dedicado a moda y deco</value>
+  </data>
+  <data name="Learn" xml:space="preserve">
+    <value>Conoce las tendencias sostenibles que se están desarrollando a nivel mundial y su impacto estratégico en la oferta comercial exportable; teniendo como eje los grandes cambios del consumo debido a la pandemia</value>
+  </data>
+  <data name="Co_Organizer" xml:space="preserve">
+    <value>Coorganizadores</value>
+  </data>
+  <data name="Sponsors" xml:space="preserve">
+    <value>Auspiciadores</value>
+  </data>
+  <data name="Access_To" xml:space="preserve">
+    <value>acceder al foro</value>
+  </data>
+  <data name="Sign_Up_Title_To" xml:space="preserve">
+    <value>Regístrate para</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Recuerda que todas las ponencias son transmitidas mediante Zoom</value>
+  </data>
 </root>

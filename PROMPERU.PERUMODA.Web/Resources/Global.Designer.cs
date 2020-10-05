@@ -545,5 +545,14 @@ namespace PROMPERU.PERUMODA.Web.Resources {
                 return ResourceManager.GetString("Virtual_Edition", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recuerda que todas las ponencias son transmitidas mediante Zoom.
+        /// </summary>
+        public static string Zoom {
+            get {
+                return ResourceManager.GetString("Zoom", resourceCulture);
+            }
+        }
     }
 }
