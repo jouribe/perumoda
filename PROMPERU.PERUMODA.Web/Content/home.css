@@ -130,7 +130,7 @@ section.banner .content .rrss-banner .media-links {
 }
 section.banner .content .rrss-banner {
     position: absolute;
-    top: 55%;
+    top: 58%;
     left: 5%;
 }
 section.banner .content .rrss-banner img {
@@ -279,9 +279,24 @@ section.banner {
 .home section.intermedio .content {
     padding: 36px 0;
 }
-
+.year {
+    font-family: ClanOT-Book;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 45px;
+    line-height: 115%;
+    padding-top: 40px;
+}
 /*Media Mobile*/
 @media screen and (max-width: 767px) {
+    .year {
+        font-size: 21px;
+        line-height: 115%;
+        padding-top: 0;
+        position: absolute;
+        top: 145px;
+        left: 5%;
+    }
     .cronogramas.home .content .bloques .bloque {
         width: 100%;
         margin-bottom: 20px;
@@ -331,8 +346,8 @@ section.banner {
     section.banner .content .slider-image .item img.logo-uno {
         padding-left: 5%;
         position: absolute;
-        top: 87px;
-        width: 70%;
+        top: 73px;
+        width: 60%; 
         min-width: auto;
     }
     section.banner .content .slider-image .item img.personaje {
@@ -407,6 +422,9 @@ section.banner {
 
 /*Media lange*/
 @media screen and (min-width: 1699px) {
+    .year {
+        font-size: 60px;
+    }
     .home section.inicio {
         background: url(../image/cuerpo-home.png) #F7F4EE;
         background-size: 100%;

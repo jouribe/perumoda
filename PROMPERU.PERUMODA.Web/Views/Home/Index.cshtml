@@ -43,6 +43,7 @@
         <div class="slider-image fade">
             <div class="item">
                 <img class="logo-uno" src="~/image/perumoda_negro.svg" alt="Perú Moda">
+                <p class="year">2020</p>
                 <img class="personaje" src="~/image/banner-black.png" alt="">
                 <div class="info-evento">
                     @if (Context.Request.Cookies["culture"]?.Value == "es-PE")
@@ -62,7 +63,7 @@
                     <div class="week">
                         @if (Context.Request.Cookies["culture"]?.Value == "es-PE")
                         {
-                            <p>01-30 <br><span>@Global.October</span></p>
+                            <p>01-29 <br><span>@Global.October</span></p>
                         }
                         else
                         {
@@ -81,6 +82,7 @@
             </div>
             <div class="item">
                 <img class="logo-uno" src="~/image/perumoda_green.svg" alt="Perú Moda">
+                <p class="year">2020</p>
                 <img class="personaje" src="~/image/banner-green.png" alt="">
                 <div class="info-evento">
                     <h2>@Global.Days_30 <br>@Global.Talks</h2>
@@ -88,7 +90,7 @@
                     <div class="week">
                         @if (Context.Request.Cookies["culture"]?.Value == "es-PE")
                         {
-                            <p>01-30 <br><span>@Global.October</span></p>
+                            <p>01-29 <br><span>@Global.October</span></p>
                         }
                         else
                         {

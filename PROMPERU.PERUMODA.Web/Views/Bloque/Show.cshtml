@@ -99,7 +99,7 @@
 
         @if (ViewBag.Suscrito && User.Identity.IsAuthenticated && DateTime.Now < Model.BloqueFechaInicio)
         {
-            <a href="javascript:void(0);" class="anuncio texto suscribeAbrir" style="cursor: default">
+            <a href="javascript:void(0);" class="anuncio texto" style="cursor: default">
                 <p>
                     @Global.Soon <br><strong>@Global.Live_Stream_Soon</strong>
                 </p>
@@ -257,9 +257,9 @@
 
 <div id="suscribe" class="tlegales" style="display: none;">
     <div class="legales-content">
-        <a href="javascript:void(0)" id="close">
+        @*<a href="javascript:void(0)" id="close">
             <img src="~/image/close.svg" alt="">
-        </a>
+        </a>*@
         <div class="legales-txt">
             <div class="content-legales">
                 <div class="sa">
