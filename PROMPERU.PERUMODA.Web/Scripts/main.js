@@ -99,7 +99,7 @@ $(function () {
         } else if (!verifEmail(email)) {
             mostrarError("lbEmail", "Ingresa un email válido.");
             return false;
-        } else if (cel.length !== 9 || cel.slice(0, 1) !== "9") {
+        } else if (cel.length !== 15) {
             mostrarError("lbCelular", "Ingresa un celular válido.");
             return false;
         } else if (tipoDoc === "") {

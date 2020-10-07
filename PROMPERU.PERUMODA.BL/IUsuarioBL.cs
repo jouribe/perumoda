@@ -1,4 +1,5 @@
-﻿using PROMPERU.PERUMODA.BE;
+﻿using System.Collections.Generic;
+using PROMPERU.PERUMODA.BE;
 
 // ReSharper disable InconsistentNaming
 
@@ -18,5 +19,11 @@ namespace PROMPERU.PERUMODA.BL
         /// <param name="usuario"></param>
         /// <returns></returns>
         UsuarioBE ListarUsuario(UsuarioBE usuario);
+
+        /// <summary>
+        /// Listar los usuarios registrados en la base de datos con los bloques a los que suscribieron.
+        /// </summary>
+        /// <returns></returns>
+        List<UsuarioBloqueBE> ListarUsuarioBloque();
     }
 }

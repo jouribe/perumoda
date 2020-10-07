@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using PROMPERU.PERUMODA.BE;
-using PROMPERU.PERUMODA.BL;
-using PROMPERU.PERUMODA.Web.Managers;
+﻿using System.Web.Mvc;
 
 namespace PROMPERU.PERUMODA.Web.Controllers
 {

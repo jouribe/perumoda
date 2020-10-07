@@ -118,6 +118,7 @@ namespace PROMPERU.PERUMODA.Web.Controllers
 
             Session["UsuarioId"] = usuarioAutenticado.UsuarioId;
             Session["UsuarioNombre"] = usuarioAutenticado.UsuarioNombres;
+            Session["UsuarioTipo"] = usuarioAutenticado.UsuarioTipo;
             FormsAuthentication.SetAuthCookie(usuarioAutenticado.UsuarioCorreoElectronico, false);
 
             foreach (int usuarioBloque in usuario.Bloques)
@@ -146,7 +147,7 @@ namespace PROMPERU.PERUMODA.Web.Controllers
         }
 
         /// <summary>
-        /// Logea al usuario al sistema.
+        /// Inicia sesión de usuario al sistema.
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>
@@ -163,6 +164,7 @@ namespace PROMPERU.PERUMODA.Web.Controllers
                 {
                     Session["UsuarioId"] = usuarioAutenticado.UsuarioId;
                     Session["UsuarioNombre"] = usuarioAutenticado.UsuarioNombres;
+                    Session["UsuarioTipo"] = usuarioAutenticado.UsuarioTipo;
                     FormsAuthentication.SetAuthCookie(usuarioAutenticado.UsuarioCorreoElectronico, false);
                     return RedirectToAction("Index", "Home");
                 }
@@ -174,13 +176,14 @@ namespace PROMPERU.PERUMODA.Web.Controllers
         }
 
         /// <summary>
-        /// logout de usuario.
+        /// Cierra sesión de usuario.
         /// </summary>
         /// <returns></returns>
         public ActionResult Logout()
         {
             Session["UsuarioId"] = null;
             Session["UsuarioNombre"] = null;
+            Session["UsuarioTipo"] = null;
 
             FormsAuthentication.SignOut();
 
