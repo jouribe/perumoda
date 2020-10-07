@@ -9,7 +9,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PROMPERU.PERUMODA.BE;
 using PROMPERU.PERUMODA.BL;
-using Excel = Microsoft.Office.Interop.Excel;
 
 namespace PROMPERU.PERUMODA.Web.Controllers
 {
