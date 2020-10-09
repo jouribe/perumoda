@@ -65,7 +65,7 @@ $(document).ready(function () {
 });
 
 $(function () {
-    $('#btnRegistrarUsuario').click(function () {
+    $("#btnRegistrarUsuario").click(function () {
 
         let atLeastOneIsChecked = false;
 
@@ -99,7 +99,7 @@ $(function () {
         } else if (!verifEmail(email)) {
             mostrarError("lbEmail", "Ingresa un email válido.");
             return false;
-        } else if (cel.length !== 15) {
+        } else if (cel.length < 7 && cel.length > 15) {
             mostrarError("lbCelular", "Ingresa un celular válido.");
             return false;
         } else if (tipoDoc === "") {

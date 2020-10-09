@@ -48,16 +48,20 @@ function verifL(n) {
 }
 
 function verifTelefono(n) {
-    permitidos = /[^áàäâªÁÀÂÄéèëêÉÈÊËíìïîÍÌÏÎóòöôÓÒÖÔ'úùüûÚÙÛÜabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ .]/;
+
+    var permitidos = /[^áàäâªÁÀÂÄéèëêÉÈÊËíìïîÍÌÏÎóòöôÓÒÖÔ'úùüûÚÙÛÜabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ .]/;
+    
     if (!permitidos.test(n.value.slice(n.value.length - 1))) {
         //n.value = n.value.slice(0, n.value.length - 1)
         n.value = "";
         //n.focus();
     }
+
     if (n.value.length > 15) {
         n.value = n.value.slice(0, 15);
     }
-    if (n.value == "111111111" || n.value == "222222222" || n.value == "333333333" || n.value == "444444444" || n.value == "555555555" || n.value == "666666666" || n.value == "777777777" || n.value == "888888888" || n.value == "999999999" || n.value == "000000000" || n.value == "123456789" || n.value == "987654321") {
+
+    if (n.value === "111111111" || n.value === "222222222" || n.value === "333333333" || n.value === "444444444" || n.value === "555555555" || n.value === "666666666" || n.value === "777777777" || n.value === "888888888" || n.value === "999999999" || n.value === "000000000" || n.value === "123456789" || n.value === "987654321") {
         n.value = "";
     }
 }
